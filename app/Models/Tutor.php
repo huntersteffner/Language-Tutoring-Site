@@ -14,6 +14,7 @@ class Tutor extends Model
         'image',
         'credits_required',
         'description',
+        'location',
         'english',
         'spanish',
         'portuguese',

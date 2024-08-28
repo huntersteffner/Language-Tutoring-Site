@@ -11,6 +11,7 @@ export interface Tutor {
     image: string
     credits_required: number
     description: string
+    location: string
     english?: boolean
     spanish?: boolean
     portuguese?: boolean
@@ -18,6 +19,7 @@ export interface Tutor {
     german?: boolean
     japanese?: boolean
     mandarine?: boolean
+    ranges: string
 }
 
 export type PageProps<T extends Record<string, unknown> = Record<string, unknown>> = T & {

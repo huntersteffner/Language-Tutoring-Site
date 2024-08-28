@@ -17,9 +17,11 @@ class TutorResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'ranges' => $this->ranges,
             'image' => $this->image,
             'credits_required' => $this->credits_required,
             'description' => $this->description,
+            'location' => $this->location,
             'english' => $this->english,
             'spanish' => $this->spanish,
             'portuguese' => $this->portuguese,

@@ -28,13 +28,16 @@ class DatabaseSeeder extends Seeder
             'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
             'credits_required' => 2,
             'description' => 'I can eat chocolate',
-            'english' => true
+            'location' => 'New York, USA',
+            'english' => true,
+            'ranges' => "[\"spanish\",\"english\"]"
         ]);
         Tutor::create([
             'name' => 'Brazilian Name',
             'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
             'credits_required' => 2,
             'description' => 'I can eat chocolate',
+            'location' => 'Sao Paulo, Brazil',
             'portuguese' => true,
             'spanish' => true
         ]);
@@ -43,6 +46,7 @@ class DatabaseSeeder extends Seeder
             'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
             'credits_required' => 3,
             'description' => 'I can eat chocolate',
+            'location' => 'Munich, Germany',
             'german' => true,
             'english' => true,
             'french' => true
@@ -52,6 +56,7 @@ class DatabaseSeeder extends Seeder
             'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
             'credits_required' => 2,
             'description' => 'I can eat chocolate',
+            'location' => 'Kyoto, Japan',
             'japanese' => true,
             'english' => true,
         ]);
@@ -60,6 +65,7 @@ class DatabaseSeeder extends Seeder
             'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
             'credits_required' => 2,
             'description' => 'I can eat chocolate',
+            'location' => 'Beijing, China',
             'japanese' => true,
             'mandarine' => true,
         ]);
@@ -68,6 +74,7 @@ class DatabaseSeeder extends Seeder
             'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
             'credits_required' => 1,
             'description' => 'I can eat chocolate',
+            'location' => 'Nice, France',
             'french' => true,
         ]);
         Tutor::create([
@@ -75,6 +82,7 @@ class DatabaseSeeder extends Seeder
             'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
             'credits_required' => 1,
             'description' => 'I can eat chocolate',
+            'location' => 'Lima, Peru',
             'spanish' => true,
             'english' => true,
         ]);
@@ -83,6 +91,7 @@ class DatabaseSeeder extends Seeder
             'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
             'credits_required' => 2,
             'description' => 'I can eat chocolate',
+            'location' => 'Cordoba, Spain',
             'japanese' => true,
             'spanish' => true,
             'german' => true
