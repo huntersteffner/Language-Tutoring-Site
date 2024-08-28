@@ -25,10 +25,67 @@ class DatabaseSeeder extends Seeder
         // Tutor Seeders
         Tutor::create([
             'name' => 'Molly Johnson',
-            'image' => 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.charactour.com%2Fhub%2Fcharacters%2Fview%2FPatrick-Star.SpongeBob-SquarePants&psig=AOvVaw3n_m6XhNPp3a1ASAInBs1w&ust=1724780182904000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCICk9YKZk4gDFQAAAAAdAAAAABAE',
-            'credits_required' => 3,
+            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            'credits_required' => 2,
             'description' => 'I can eat chocolate',
             'english' => true
+        ]);
+        Tutor::create([
+            'name' => 'Brazilian Name',
+            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            'credits_required' => 2,
+            'description' => 'I can eat chocolate',
+            'portuguese' => true,
+            'spanish' => true
+        ]);
+        Tutor::create([
+            'name' => 'German Name',
+            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            'credits_required' => 3,
+            'description' => 'I can eat chocolate',
+            'german' => true,
+            'english' => true,
+            'french' => true
+        ]);
+        Tutor::create([
+            'name' => 'Japanese Name',
+            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            'credits_required' => 2,
+            'description' => 'I can eat chocolate',
+            'japanese' => true,
+            'english' => true,
+        ]);
+        Tutor::create([
+            'name' => 'Chinese Name',
+            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            'credits_required' => 2,
+            'description' => 'I can eat chocolate',
+            'japanese' => true,
+            'mandarine' => true,
+        ]);
+        Tutor::create([
+            'name' => 'French Name',
+            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            'credits_required' => 1,
+            'description' => 'I can eat chocolate',
+            'french' => true,
+        ]);
+        Tutor::create([
+            'name' => 'Spanish Name',
+            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            'credits_required' => 1,
+            'description' => 'I can eat chocolate',
+            'spanish' => true,
+            'english' => true,
+        ]);
+        Tutor::create([
+            'name' => 'Spanish Name',
+            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            'credits_required' => 2,
+            'description' => 'I can eat chocolate',
+            'japanese' => true,
+            'spanish' => true,
+            'german' => true
         ]);
 
 

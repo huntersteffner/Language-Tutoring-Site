@@ -5,8 +5,26 @@ export interface User {
     email_verified_at?: string;
 }
 
+export interface Tutor {
+    id: number
+    name: string
+    image: string
+    credits_required: number
+    description: string
+    english?: boolean
+    spanish?: boolean
+    portuguese?: boolean
+    french?: boolean
+    german?: boolean
+    japanese?: boolean
+    mandarine?: boolean
+}
+
 export type PageProps<T extends Record<string, unknown> = Record<string, unknown>> = T & {
     auth: {
         user: User;
-    };
+    }
+    tutors: {
+        data: Tutor[]
+    }
 };
