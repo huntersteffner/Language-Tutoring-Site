@@ -25,31 +25,47 @@ class DatabaseSeeder extends Seeder
         // Tutor Seeders
         Tutor::create([
             'name' => 'Molly Johnson',
-            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            // https://unsplash.com/photos/woman-in-white-scoop-neck-shirt-smiling-WYE2UhXsU1Y
+            'image' => 'img/tutors/American1.jpg',
             'credits_required' => 2,
             'description' => 'I can eat chocolate',
             'location' => 'New York, USA',
-            'english' => true,
-            'ranges' => "[\"spanish\",\"english\"]"
+            'languages' => '["English","Spanish"]',
         ]);
         Tutor::create([
             'name' => 'Brazilian Name',
-            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            // https://unsplash.com/photos/mens-blue-polo-shirt-AQql9zLz9mk
+            'image' => 'img/tutors/Brazilian1.jpg',
             'credits_required' => 2,
             'description' => 'I can eat chocolate',
             'location' => 'Sao Paulo, Brazil',
-            'portuguese' => true,
-            'spanish' => true
+            'languages' => '["Portuguese","Spanish"]',
         ]);
         Tutor::create([
             'name' => 'German Name',
-            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            // https://unsplash.com/photos/woman-in-black-long-sleeve-shirt-sitting-on-white-couch-n1B6ftPB5Eg
+            'image' => 'img/tutors/German1.jpg',
             'credits_required' => 3,
             'description' => 'I can eat chocolate',
             'location' => 'Munich, Germany',
-            'german' => true,
-            'english' => true,
-            'french' => true
+            'languages' => '["German","English","French"]',
+        ]);
+        Tutor::create([
+            'name' => 'Arabic Name',
+            // https://unsplash.com/photos/man-in-blue-washed-jacket-1QOsJGbNIgk
+            'image' => 'img/tutors/Arabic1.jpg',
+            'credits_required' => 3,
+            'description' => 'I can eat chocolate',
+            'location' => 'Cairo, Egypt',
+            'languages' => '["Arabic","French","English"]',
+        ]);
+        Tutor::create([
+            'name' => 'Hindi Name',
+            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            'credits_required' => 3,
+            'description' => 'I can eat chocolate',
+            'location' => 'Cairo, Egypt',
+            'languages' => '["Hindi","English","Mandarine"]',
         ]);
         Tutor::create([
             'name' => 'Japanese Name',
@@ -57,8 +73,7 @@ class DatabaseSeeder extends Seeder
             'credits_required' => 2,
             'description' => 'I can eat chocolate',
             'location' => 'Kyoto, Japan',
-            'japanese' => true,
-            'english' => true,
+            'languages' => '["Japanese","English"]',
         ]);
         Tutor::create([
             'name' => 'Chinese Name',
@@ -66,16 +81,16 @@ class DatabaseSeeder extends Seeder
             'credits_required' => 2,
             'description' => 'I can eat chocolate',
             'location' => 'Beijing, China',
-            'japanese' => true,
-            'mandarine' => true,
+            'languages' => '["Mandarine","Japanese"]',
         ]);
         Tutor::create([
             'name' => 'French Name',
-            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            // https://unsplash.com/photos/woman-wearing-blue-coat-7uoMmzPd2JA
+            'image' => 'img/tutors/French1.jpg',
             'credits_required' => 1,
             'description' => 'I can eat chocolate',
             'location' => 'Nice, France',
-            'french' => true,
+            'languages' => '["French"]',
         ]);
         Tutor::create([
             'name' => 'Spanish Name',
@@ -83,8 +98,7 @@ class DatabaseSeeder extends Seeder
             'credits_required' => 1,
             'description' => 'I can eat chocolate',
             'location' => 'Lima, Peru',
-            'spanish' => true,
-            'english' => true,
+            'languages' => '["Spanish","English"]',
         ]);
         Tutor::create([
             'name' => 'Spanish Name',
@@ -92,9 +106,7 @@ class DatabaseSeeder extends Seeder
             'credits_required' => 2,
             'description' => 'I can eat chocolate',
             'location' => 'Cordoba, Spain',
-            'japanese' => true,
-            'spanish' => true,
-            'german' => true
+            'languages' => '["Spanish","Portuguese","Arabic"]',
         ]);
 
 

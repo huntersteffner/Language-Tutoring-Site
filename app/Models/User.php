@@ -3,10 +3,14 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Observers\UserObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+#[ObservedBy(UserObserver::class)]
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -43,5 +47,13 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function decreaseCredits(int $creditsRequired): self {
+        // Decrease credits
+        $this->credits_available -= $creditsRequired;
+        // Save changes to user
+        $this->save();
+        return $this;
     }
 }

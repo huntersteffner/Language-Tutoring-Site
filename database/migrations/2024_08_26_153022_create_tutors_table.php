@@ -18,14 +18,7 @@ return new class extends Migration
             $table->integer('credits_required');
             $table->string('description');
             $table->string('location');
-            $table->boolean('english')->default(false);
-            $table->boolean('spanish')->default(false);
-            $table->boolean('portuguese')->default(false);
-            $table->boolean('french')->default(false);
-            $table->boolean('german')->default(false);
-            $table->boolean('japanese')->default(false);
-            $table->boolean('mandarine')->default(false);
-            $table->jsonb('ranges')->nullable();
+            $table->jsonb('languages')->nullable();
             $table->timestamps();
         });
     }

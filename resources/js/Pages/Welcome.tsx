@@ -9,6 +9,8 @@ export default function Welcome({ auth }: PageProps<{ laravelVersion: string, ph
         document.getElementById('background')?.classList.add('!hidden');
     };
 
+    console.log(auth)
+
     return (
         <>
             <Head title="Home" />

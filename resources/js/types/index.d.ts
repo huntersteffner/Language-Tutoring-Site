@@ -1,8 +1,9 @@
 export interface User {
-    id: number;
-    name: string;
-    email: string;
-    email_verified_at?: string;
+    id: number
+    name: string
+    email: string
+    credits_available: number
+    email_verified_at?: string
 }
 
 export interface Tutor {
@@ -12,14 +13,13 @@ export interface Tutor {
     credits_required: number
     description: string
     location: string
-    english?: boolean
-    spanish?: boolean
-    portuguese?: boolean
-    french?: boolean
-    german?: boolean
-    japanese?: boolean
-    mandarine?: boolean
-    ranges: string
+    languages: string
+}
+
+export type TutorsProps = {
+    tutors: {
+        data: Tutor[]
+    }
 }
 
 export type PageProps<T extends Record<string, unknown> = Record<string, unknown>> = T & {

@@ -5,8 +5,10 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
+import Layout from '@/Layouts/Layout';
+import { PageProps } from '@/types';
 
-export default function Register() {
+export default function Register({auth}: PageProps) {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
         email: '',
@@ -23,7 +25,7 @@ export default function Register() {
     };
 
     return (
-        <GuestLayout>
+        <Layout user={auth.user}>
             <Head title="Register" />
 
             <form onSubmit={submit}>
@@ -108,6 +110,6 @@ export default function Register() {
                     </PrimaryButton>
                 </div>
             </form>
-        </GuestLayout>
+        </Layout>
     );
 }

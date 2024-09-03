@@ -15,12 +15,6 @@ class Tutor extends Model
         'credits_required',
         'description',
         'location',
-        'english',
-        'spanish',
-        'portuguese',
-        'french',
-        'german',
-        'japanese',
-        'mandarine',
+        'languages',
     ];
 }
