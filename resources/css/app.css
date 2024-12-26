@@ -5,3 +5,24 @@
 .login-card {
     @apply my-2 px-4 py-3 border rounded-xl shadow-lg
 }
+
+/* .mobile-links {
+}
+
+.mobile-links-closed {
+    top: -7rem;
+}
+
+.mobile-links-opened {
+    transition: .6s all;
+    transform: translateY(0);
+} */
+
+.mobile-links {
+    transform: translateY(4rem);
+    transition: transform 0.3s ease-in;
+}
+
+.mobile-links.mobile-links-closed {
+    transform: translateY(-150%);
+}
