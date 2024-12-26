@@ -22,7 +22,8 @@ class TutorController extends Controller
     public function index() {
         $tutors = Tutor::all();
         return inertia('Tutors', [
-            'tutors' => TutorResource::collection($tutors)
+            'tutors' => TutorResource::collection($tutors),
+            'message' => session('message')
         ]);
     }
 
@@ -47,12 +48,16 @@ class TutorController extends Controller
 
         $user->decreaseCredits($tutor->credits_required);
 
+        $message = 'You\'ve booked a language tutoring session with '. $tutor->name . '. Check your email for the confirmation details.';
+
         BookedSession::create([
             'tutor_id' => $tutor->id,
             'user_id' => $user->id,
             'credits' => $tutor->credits_required
         ]);
 
-        return to_route('tutors');
+        $bookedSessions = BookedSession::all();
+
+        return to_route('tutors')->with('message', $message);
     }
 }

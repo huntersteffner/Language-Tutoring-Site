@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TutorController;
 use Illuminate\Foundation\Application;
@@ -20,6 +21,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth', 'verified'])->group(function() {
+    Route::get('/history', [HistoryController::class, 'index'])->name('history');
+
     Route::post('/tutors', [TutorController::class, 'book'])->name('tutors.book');
 });
 

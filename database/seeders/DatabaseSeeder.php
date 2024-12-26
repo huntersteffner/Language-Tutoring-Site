@@ -61,7 +61,8 @@ class DatabaseSeeder extends Seeder
         ]);
         Tutor::create([
             'name' => 'Hindi Name',
-            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            // https://unsplash.com/photos/womens-red-sweater-qO_O7AwN1B0
+            'image' => 'img/tutors/Hindi1.jpg',
             'credits_required' => 3,
             'description' => 'I can eat chocolate',
             'location' => 'Cairo, Egypt',
@@ -69,7 +70,8 @@ class DatabaseSeeder extends Seeder
         ]);
         Tutor::create([
             'name' => 'Japanese Name',
-            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            // https://unsplash.com/photos/woman-standing-near-body-of-water-dcZsxUAAJXs
+            'image' => 'img/tutors/Japanese1.jpg',
             'credits_required' => 2,
             'description' => 'I can eat chocolate',
             'location' => 'Kyoto, Japan',
@@ -77,7 +79,8 @@ class DatabaseSeeder extends Seeder
         ]);
         Tutor::create([
             'name' => 'Chinese Name',
-            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            // https://unsplash.com/photos/man-wearing-eyeglasses-and-blue-shirt-inside-coffee-shop-QJEVpydulGs
+            'image' => 'img/tutors/Chinese1.jpg',
             'credits_required' => 2,
             'description' => 'I can eat chocolate',
             'location' => 'Beijing, China',
@@ -94,19 +97,30 @@ class DatabaseSeeder extends Seeder
         ]);
         Tutor::create([
             'name' => 'Spanish Name',
-            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
-            'credits_required' => 1,
+            // https://unsplash.com/photos/smiling-man-standing-near-green-trees-VVEwJJRRHgk
+            'image' => 'img/tutors/Spanish1.jpg',
+            'credits_required' => 2,
             'description' => 'I can eat chocolate',
             'location' => 'Lima, Peru',
             'languages' => '["Spanish","English"]',
         ]);
         Tutor::create([
             'name' => 'Spanish Name',
-            'image' => 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Patrick-Star.SpongeBob-SquarePants.webp',
+            // https://unsplash.com/photos/woman-in-black-coat-sitting-on-chair-NpyF7rjqmq4
+            'image' => 'img/tutors/Spanish2.jpg',
             'credits_required' => 2,
             'description' => 'I can eat chocolate',
             'location' => 'Cordoba, Spain',
             'languages' => '["Spanish","Portuguese","Arabic"]',
+        ]);
+        Tutor::create([
+            'name' => 'Japanese Name',
+            // https://unsplash.com/photos/woman-taking-selfie-c-mgSuxqpzA
+            'image' => 'img/tutors/Japanese2.jpg',
+            'credits_required' => 3,
+            'description' => 'I can eat chocolate',
+            'location' => 'Kyoto, Japan',
+            'languages' => '["Japanese","French","English"]',
         ]);
 
 

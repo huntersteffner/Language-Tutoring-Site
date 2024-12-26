@@ -17,13 +17,16 @@ export default function Navbar({user}: {user: User}) {
                     <div>
                         <Link href="/">About</Link>
                     </div>
+                    <div>
+                        <Link href='/history'>Session History</Link>
+                    </div>
                 </div>
                 <div className="flex">
                     {user ? 
                         (
                             <div>
                                 <p>{user.credits_available} Credits</p>
-                                <Link href='/'>Log Out</Link>
+                                <Link method="post" href={route('logout')} as="button">Log Out</Link>
                             </div>
                         ) : 
                         (

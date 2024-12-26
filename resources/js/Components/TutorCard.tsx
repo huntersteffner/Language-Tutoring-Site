@@ -1,22 +1,14 @@
-import { PageProps, Tutor, User } from "@/types"
+import { Tutor, User } from "@/types"
 import LanguageBox from "./LanguageBox"
 import React from "react"
-import { useForm} from "@inertiajs/react"
+import { Link, useForm} from "@inertiajs/react"
 
 
 export default function TutorCard({user,tutor}: {user: User,tutor: Tutor}) {
-    interface TestInterface {
-        tutor_id: number
-    }
-    const {data, setData, post, reset, errors, processing} = useForm({
+
+    const { post, reset } = useForm({
         tutor_id: tutor.id
     })
-
-    // const testForm = useForm<TestInterface>([
-    //     tutor_id: tutor.id
-    // ])
-    
-    // const userId = user.id
 
     const submit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -29,12 +21,12 @@ export default function TutorCard({user,tutor}: {user: User,tutor: Tutor}) {
     }
     return (
         <div>
-            <div className="flex justify-around items-center my-2 py-3 border rounded-xl">
+            <div className="flex flex-col justify-center items-center my-2 py-3 border rounded-xl shadow-lg md:flex-row md:justify-around">
                 <img className="h-[10rem] w-[10rem] rounded-full overflow-hidden object-cover" src={tutor.image} alt={`${tutor.name}`} />
-                <div>
-                    <p className="text-2xl font-bold">{tutor.name}</p>
-                    <p>From {tutor.location}</p>
-                    <p>{tutor.description}</p>
+                <div className="w-full text-center md:w-1/2">
+                    <p className="text-4xl font-bold md:text-2xl">{tutor.name}</p>
+                    <p className="text-lg">From {tutor.location}</p>
+                    <p className="text-lg">{tutor.description}</p>
                     <div>
                         {tutor.languages && (
                             JSON.parse(tutor.languages).map((language: string, i: number) => (
@@ -43,21 +35,24 @@ export default function TutorCard({user,tutor}: {user: User,tutor: Tutor}) {
                         )}
                     </div>
                     <p>{tutor.credits_required} Credit{tutor.credits_required > 1 ? 's' : ''} Per Session</p>
-                    {user ?
-                        (
-                            <form onSubmit={submit}>
-                                
-                                <button className="w-full bg-slate-500 text-white">
-                                    Book Session
-                                </button>
-                            </form>
-                        ) :
-                        (
-                            <button className="w-full bg-slate-500 text-white">
-                                Log In To Book Session
-                            </button>
-                        )
-                    }
+                    <div className="w-full px-5">
+                        {user ?
+                            (
+                                <form onSubmit={submit}>
+                                    <button className="focus:outline-none text-white bg-green-800 hover:bg-green-900 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 me-2 mb-2">
+                                        Book Session
+                                    </button>
+                                </form>
+                            ) :
+                            (
+                                <Link href={route('login')}>     
+                                    <button className="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 me-2 mb-2">
+                                        Log In To Book Session
+                                    </button>
+                                </Link>
+                            )     
+                        }
+                    </div>
                 </div>
             </div>
         </div>

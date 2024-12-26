@@ -16,6 +16,13 @@ export interface Tutor {
     languages: string
 }
 
+export interface BookedSession {
+    id: number
+    credits: number
+    created_at: string
+    tutor: Tutor
+}
+
 export type TutorsProps = {
     tutors: {
         data: Tutor[]
@@ -24,9 +31,12 @@ export type TutorsProps = {
 
 export type PageProps<T extends Record<string, unknown> = Record<string, unknown>> = T & {
     auth: {
-        user: User;
+        user: User
     }
     tutors: {
         data: Tutor[]
+    }
+    bookedSessions: {
+        data: BookedSession[]
     }
 };

@@ -16,6 +16,12 @@ class BookedSession extends Model
         'data'
     ];
 
+    protected function casts(): array {
+        return [
+            'data' => 'array'
+        ];
+    }
+
     public function user() {
         return $this->belongsTo(User::class);
     }
