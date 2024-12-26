@@ -6,11 +6,11 @@ import Footer from "./Footer"
 export default function Layout({user, children}: PropsWithChildren<{user: User}>) {
     return (
         <>
-            <div className="w-full max-w-7xl mx-auto">
-                <Navbar user={user} />
+            <Navbar user={user} />
+            <div className="flex flex-col justify-center w-full min-h-[50rem] max-w-7xl mx-auto">
                 <main>{children}</main>
-                <Footer />
             </div>
+            <Footer />
         </>
     )
 }

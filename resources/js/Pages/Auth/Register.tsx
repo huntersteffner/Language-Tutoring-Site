@@ -28,7 +28,7 @@ export default function Register({auth}: PageProps) {
         <Layout user={auth.user}>
             <Head title="Register" />
 
-            <form onSubmit={submit}>
+            <form className='login-card' onSubmit={submit}>
                 <div>
                     <InputLabel htmlFor="name" value="Name" />
 

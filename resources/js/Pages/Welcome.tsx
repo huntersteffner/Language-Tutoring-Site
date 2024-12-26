@@ -1,7 +1,9 @@
 import { Link, Head } from '@inertiajs/react';
 import { PageProps } from '@/types';
+import Navbar from '@/Layouts/Navbar';
+import { User } from '@/types';
 
-export default function Welcome({ auth }: PageProps<{ laravelVersion: string, phpVersion: string }>) {
+export default function Welcome({ auth, user }: PageProps<{ laravelVersion: string, phpVersion: string, user: User }>) {
     const handleImageError = () => {
         document.getElementById('screenshot-container')?.classList.add('!hidden');
         document.getElementById('docs-card')?.classList.add('!row-span-1');
@@ -13,6 +15,7 @@ export default function Welcome({ auth }: PageProps<{ laravelVersion: string, ph
 
     return (
         <>
+            <Navbar user={user}></Navbar>
             <Head title="Home" />
             <div className="bg-gray-50 text-black/50">
                 <div className="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">

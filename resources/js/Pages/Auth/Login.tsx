@@ -29,7 +29,7 @@ export default function Login({ auth, status, canResetPassword }: PageProps<{ st
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
-            <form onSubmit={submit}>
+            <form className='login-card' onSubmit={submit}>
                 <div>
                     <InputLabel htmlFor="email" value="Email" />
 
