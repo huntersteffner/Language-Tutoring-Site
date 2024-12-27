@@ -25,4 +25,5 @@
 
 .mobile-links.mobile-links-closed {
     transform: translateY(-150%);
+    color: #666;
 }

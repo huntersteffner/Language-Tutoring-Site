@@ -1,4 +1,4 @@
-import NavLink from "./NavLink"
+import NavLink from "../NavLink"
 
 export default function NavbarLinksDesktop({ pageLinks }: {pageLinks: string[]}) {
     return (

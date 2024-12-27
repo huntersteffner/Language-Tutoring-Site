@@ -28,25 +28,25 @@ class DatabaseSeeder extends Seeder
             // https://unsplash.com/photos/woman-in-white-scoop-neck-shirt-smiling-WYE2UhXsU1Y
             'image' => 'img/tutors/American1.jpg',
             'credits_required' => 2,
-            'description' => 'I can eat chocolate',
+            'description' => 'Hello, I have been tutoring in both English and Spanish since 2019. I have experience teaching both children and adults, and can be flexible to each student\'s unique needs and goals.',
             'location' => 'New York, USA',
             'languages' => '["English","Spanish"]',
         ]);
         Tutor::create([
-            'name' => 'Brazilian Name',
+            'name' => 'Rafael Medeiros',
             // https://unsplash.com/photos/mens-blue-polo-shirt-AQql9zLz9mk
             'image' => 'img/tutors/Brazilian1.jpg',
             'credits_required' => 2,
-            'description' => 'I can eat chocolate',
+            'description' => 'Oi, tudo bem. I\'m based out of Sao Paulo and can speak Portuguese and Spanish. I\'m very passionate about language learning and am excited to help to help you on your language learning journey. Feel free to book a session and let\'s start working together.',
             'location' => 'Sao Paulo, Brazil',
             'languages' => '["Portuguese","Spanish"]',
         ]);
         Tutor::create([
-            'name' => 'German Name',
+            'name' => 'Adrian Hoffmann',
             // https://unsplash.com/photos/woman-in-black-long-sleeve-shirt-sitting-on-white-couch-n1B6ftPB5Eg
             'image' => 'img/tutors/German1.jpg',
             'credits_required' => 3,
-            'description' => 'I can eat chocolate',
+            'description' => 'Learning a language is a challenge, but it can still be fun experience. I have a proven track record of helping students move from being stuck in learning a language, to feeling confident to speak to others.',
             'location' => 'Munich, Germany',
             'languages' => '["German","English","French"]',
         ]);

@@ -17,7 +17,7 @@ export default function HistoryCard({bookedSession}: {bookedSession: BookedSessi
         })
     }
     return (
-        <div>
+        <div className="my-2 px-4 py-3 border rounded-xl shadow-lg">
             <div className="">
                 <img className="h-[10rem] w-[10rem] rounded-full overflow-hidden object-cover" src={bookedSession.tutor.image} alt={bookedSession.tutor.name} />
                 <p>You booked a session with {bookedSession.tutor.name} on {bookedSession.created_at} for {bookedSession.credits} credit{bookedSession.credits > 1 ? 's' : ''}.</p>
