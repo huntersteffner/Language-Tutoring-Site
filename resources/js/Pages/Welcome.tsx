@@ -4,7 +4,7 @@ import Navbar from '@/Layouts/Navbar'
 import { User } from '@/types'
 import Layout from '@/Layouts/Layout'
 
-export default function Welcome({ auth, user }: PageProps<{ laravelVersion: string, phpVersion: string, user: User }>) {
+export default function Welcome({ auth, user }: PageProps<{user: User }>) {
 
     console.log(auth)
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TutorController;
@@ -16,9 +17,7 @@ Route::get('/', function () {
 
 Route::get('/tutors', [TutorController::class, 'index'])->name('tutors');
 
-Route::get('/about', function() {
-    return Inertia::render('About');
-})->name('about');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

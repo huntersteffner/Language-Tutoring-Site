@@ -65,7 +65,7 @@ class DatabaseSeeder extends Seeder
             'image' => 'img/tutors/Hindi1.jpg',
             'credits_required' => 3,
             'description' => 'I can eat chocolate',
-            'location' => 'Cairo, Egypt',
+            'location' => 'Atlanta, USA',
             'languages' => '["Hindi","English","Mandarine"]',
         ]);
         Tutor::create([
@@ -87,11 +87,11 @@ class DatabaseSeeder extends Seeder
             'languages' => '["Mandarine","Japanese"]',
         ]);
         Tutor::create([
-            'name' => 'French Name',
+            'name' => 'Leo Bernard',
             // https://unsplash.com/photos/woman-wearing-blue-coat-7uoMmzPd2JA
             'image' => 'img/tutors/French1.jpg',
             'credits_required' => 1,
-            'description' => 'I can eat chocolate',
+            'description' => 'I can teach you French. Let\'s get started today.',
             'location' => 'Nice, France',
             'languages' => '["French"]',
         ]);
@@ -105,11 +105,11 @@ class DatabaseSeeder extends Seeder
             'languages' => '["Spanish","English"]',
         ]);
         Tutor::create([
-            'name' => 'Spanish Name',
+            'name' => 'Jose Huerta',
             // https://unsplash.com/photos/woman-in-black-coat-sitting-on-chair-NpyF7rjqmq4
             'image' => 'img/tutors/Spanish2.jpg',
             'credits_required' => 2,
-            'description' => 'I can eat chocolate',
+            'description' => 'Hola, ¿quién quiere aprender español, portugues, o árabe? I have ten years experience as language translator and I know what it takes to become fluent. I\'m ready to help you reach your language goals!',
             'location' => 'Cordoba, Spain',
             'languages' => '["Spanish","Portuguese","Arabic"]',
         ]);

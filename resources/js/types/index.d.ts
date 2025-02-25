@@ -23,10 +23,23 @@ export interface BookedSession {
     tutor: Tutor
 }
 
+export interface CTA {
+    ctaText: string
+    ctaUrl: string
+}
+
 export type TutorsProps = {
     tutors: {
         data: Tutor[]
     }
+}
+
+export interface BannerProps {
+    imageUrl: string
+    altText: string
+    text?: string
+    cta?: CTA
+    backgroundColor?: string
 }
 
 export type PageProps<T extends Record<string, unknown> = Record<string, unknown>> = T & {
