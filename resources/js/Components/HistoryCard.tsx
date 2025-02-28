@@ -3,9 +3,14 @@ import { useForm } from "@inertiajs/react"
 
 export default function HistoryCard({bookedSession}: {bookedSession: BookedSession}) {
 
+    console.log(bookedSession.created_at)
+
     const { post, reset } = useForm({
         tutor_id: bookedSession.tutor.id
     })
+
+    const formattedCreatedDate = new Date(bookedSession.created_at).toDateString()
+
 
     const submit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()

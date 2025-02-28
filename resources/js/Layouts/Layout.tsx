@@ -7,7 +7,7 @@ export default function Layout({user, children}: PropsWithChildren<{user: User}>
     return (
         <>
             <Navbar user={user} />
-            <div className="flex flex-col justify-center w-full min-h-[50rem] max-w-7xl mx-auto">
+            <div className="flex flex-col w-full min-h-[50rem] max-w-7xl mx-auto">
                 <main>{children}</main>
             </div>
             <Footer />

@@ -40,7 +40,6 @@ class TutorController extends Controller
         
         
         $user = $request->user();
-        // dd($tutors, $tutor, $user);
         
         if($user->credits_available < $tutor->credits_required) {
             return back();

@@ -1,13 +1,19 @@
+import BannerImage from "@/Components/BannerImage"
 import SuccessMessage from "@/Components/SuccessMessage"
 import TutorCard from "@/Components/TutorCard"
 import Layout from "@/Layouts/Layout"
 import { PageProps, Tutor, TutorsProps } from "@/types"
+import { Head } from "@inertiajs/react"
 
 export default function Tutors({auth, tutors, message}: PageProps<{message: string}>) {
 
-    console.log(message)
     return (
         <Layout user={auth.user}>
+            <Head title='Tutors'/>
+            <BannerImage
+                imageUrl="https://mediablob.electrolux.com/media/ElectroluxMedia/Electrolux%20Laundry%20Tower%20Lifestyle%20Wide%20Crop.jpg"
+                altText="About that"
+            />
             <div className="w-full max-w-2xl mx-auto">
                 {message !== null && 
                     <SuccessMessage message={message} />

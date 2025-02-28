@@ -3,7 +3,7 @@ import BannerImage from "@/Components/BannerImage"
 import SideBanner from "@/Components/SideBanner"
 import Layout from "@/Layouts/Layout"
 import { CTA, PageProps } from "@/types"
-import { Link } from "@inertiajs/react"
+import { Head } from "@inertiajs/react"
 
 export default function About({auth, paragraphs}: PageProps<{paragraphs: string[]}>) {
     const cta: CTA = {
@@ -12,12 +12,10 @@ export default function About({auth, paragraphs}: PageProps<{paragraphs: string[
     }
     return (
         <Layout user={auth.user}>
+            <Head title='About'/>
             <BannerImage 
                 imageUrl="https://mediablob.electrolux.com/media/ElectroluxMedia/Electrolux%20Laundry%20Tower%20Lifestyle%20Wide%20Crop.jpg"
                 altText="About that"
-                text={'whats up'}
-                backgroundColor="bg-black"
-                cta={cta}
             />
             <h3 className="text-3xl">About</h3>
             <div className="flex">
@@ -32,6 +30,7 @@ export default function About({auth, paragraphs}: PageProps<{paragraphs: string[
                     altText="Patrick Star"
                     cta={cta}
                     backgroundColor="bg-red-400"
+                    text="This is a message"
                 />
             </div>
         </Layout>

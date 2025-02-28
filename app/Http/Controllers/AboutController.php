@@ -9,7 +9,7 @@ class AboutController {
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione sed amet similique. Amet deleniti, blanditiis assumenda aspernatur excepturi ipsa fugit, eum perspiciatis laboriosam laudantium alias reprehenderit atque quasi. Deserunt, optio error! Pariatur aliquam accusamus ex, eligendi quo veritatis beatae in mollitia natus? Animi cupiditate incidunt qui repellat fugit aliquam, veritatis doloremque. Mollitia veritatis magnam expedita illo beatae pariatur repellendus exercitationem odit aspernatur fugiat iste quod asperiores vel voluptates ullam rerum aut facilis, debitis amet similique quidem optio? Quod adipisci quam expedita cupiditate sunt dolorem reiciendis sapiente, culpa labore est aliquid!',
             'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et aperiam consequuntur necessitatibus aliquam dolor laboriosam perferendis exercitationem dicta delectus a! Laboriosam sit cum culpa tenetur?'
         );
-        return inertia('About', [
+        return Inertia('About', [
             'paragraphs' => $paragraphs
         ]);
     }

@@ -37,12 +37,12 @@ class DatabaseSeeder extends Seeder
             // https://unsplash.com/photos/mens-blue-polo-shirt-AQql9zLz9mk
             'image' => 'img/tutors/Brazilian1.jpg',
             'credits_required' => 2,
-            'description' => 'Oi, tudo bem. I\'m based out of Sao Paulo and can speak Portuguese and Spanish. I\'m very passionate about language learning and am excited to help to help you on your language learning journey. Feel free to book a session and let\'s start working together.',
+            'description' => 'Oi, tudo bem. I\'m based out of Sao Paulo and am certified to teach both Portuguese and Spanish. I\'m very passionate about language learning and am excited to help to help you on your language learning journey. Feel free to book a session and let\'s start working together.',
             'location' => 'Sao Paulo, Brazil',
             'languages' => '["Portuguese","Spanish"]',
         ]);
         Tutor::create([
-            'name' => 'Adrian Hoffmann',
+            'name' => 'Eva Hoffmann',
             // https://unsplash.com/photos/woman-in-black-long-sleeve-shirt-sitting-on-white-couch-n1B6ftPB5Eg
             'image' => 'img/tutors/German1.jpg',
             'credits_required' => 3,
@@ -51,11 +51,11 @@ class DatabaseSeeder extends Seeder
             'languages' => '["German","English","French"]',
         ]);
         Tutor::create([
-            'name' => 'Arabic Name',
+            'name' => 'Dodi Qureshi',
             // https://unsplash.com/photos/man-in-blue-washed-jacket-1QOsJGbNIgk
             'image' => 'img/tutors/Arabic1.jpg',
             'credits_required' => 3,
-            'description' => 'I can eat chocolate',
+            'description' => 'Learning a new language is one of the most meaningful things that someone can do, because it opens up a whole new world and expands your horizons. Whether it be Arabic, French, or English that you\'re seeking to learn, I can help you with my tutoring services. Go ahead and book a session today. I can\'t wait to meet you.',
             'location' => 'Cairo, Egypt',
             'languages' => '["Arabic","French","English"]',
         ]);
@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
             // https://unsplash.com/photos/womens-red-sweater-qO_O7AwN1B0
             'image' => 'img/tutors/Hindi1.jpg',
             'credits_required' => 3,
-            'description' => 'I can eat chocolate',
+            'description' => 'Learning a new language is something that nobody ever regrets. If you\'ve been studying for some time, I can take your language learning journey to the next level. If you\'re starting from scratch, I can help you to start a language foundation that will set you up for success.',
             'location' => 'Atlanta, USA',
             'languages' => '["Hindi","English","Mandarine"]',
         ]);
@@ -73,7 +73,7 @@ class DatabaseSeeder extends Seeder
             // https://unsplash.com/photos/woman-standing-near-body-of-water-dcZsxUAAJXs
             'image' => 'img/tutors/Japanese1.jpg',
             'credits_required' => 2,
-            'description' => 'I can eat chocolate',
+            'description' => 'You ready to learn a language? Well I\'m ready to help teach you! Let\'s get started today!',
             'location' => 'Kyoto, Japan',
             'languages' => '["Japanese","English"]',
         ]);
@@ -82,7 +82,7 @@ class DatabaseSeeder extends Seeder
             // https://unsplash.com/photos/man-wearing-eyeglasses-and-blue-shirt-inside-coffee-shop-QJEVpydulGs
             'image' => 'img/tutors/Chinese1.jpg',
             'credits_required' => 2,
-            'description' => 'I can eat chocolate',
+            'description' => 'Want to see your proficiency in Mandarine or Japanese dramatically improve? Well don\'t wait any longer. Go ahead and book a session.',
             'location' => 'Beijing, China',
             'languages' => '["Mandarine","Japanese"]',
         ]);
@@ -100,12 +100,12 @@ class DatabaseSeeder extends Seeder
             // https://unsplash.com/photos/smiling-man-standing-near-green-trees-VVEwJJRRHgk
             'image' => 'img/tutors/Spanish1.jpg',
             'credits_required' => 2,
-            'description' => 'I can eat chocolate',
+            'description' => 'Buenos días, futuro estudiante. I love teaching both Spanish and English. No matter your age, I can help you reach your goal of fluency!',
             'location' => 'Lima, Peru',
             'languages' => '["Spanish","English"]',
         ]);
         Tutor::create([
-            'name' => 'Jose Huerta',
+            'name' => 'Marta Huerta',
             // https://unsplash.com/photos/woman-in-black-coat-sitting-on-chair-NpyF7rjqmq4
             'image' => 'img/tutors/Spanish2.jpg',
             'credits_required' => 2,
@@ -118,7 +118,7 @@ class DatabaseSeeder extends Seeder
             // https://unsplash.com/photos/woman-taking-selfie-c-mgSuxqpzA
             'image' => 'img/tutors/Japanese2.jpg',
             'credits_required' => 3,
-            'description' => 'I can eat chocolate',
+            'description' => 'Ready to make your dream of speaking another language come true? Then go ahead and book your first session!',
             'location' => 'Kyoto, Japan',
             'languages' => '["Japanese","French","English"]',
         ]);
