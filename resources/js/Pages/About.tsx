@@ -1,37 +1,56 @@
 import AboutParagraph from "@/Components/AboutParagraph"
-import BannerImage from "@/Components/BannerImage"
-import SideBanner from "@/Components/SideBanner"
+import HeroBanner from "@/Components/Banners/HeroBanner"
+import ParagraphBanner from "@/Components/Banners/ParagraphBanner"
+import SideBanner from "@/Components/Banners/SideBanner"
+import { findInfoBanner } from "@/Hooks/FindInfoBanner"
 import Layout from "@/Layouts/Layout"
-import { CTA, PageProps } from "@/types"
+import { BannerData, CTA, InfoBanner, PageProps } from "@/types"
 import { Head } from "@inertiajs/react"
+import MediaQuery from "react-responsive"
 
-export default function About({auth, paragraphs}: PageProps<{paragraphs: string[]}>) {
-    const cta: CTA = {
-        ctaText: 'Go to Tutors Page',
-        ctaUrl: '/tutors'
-    }
+export default function About({auth, paragraphs, infoBanners}: PageProps<{paragraphs: string[], infoBanners: BannerData}>) {
+
+    const aboutSideBanner: InfoBanner = findInfoBanner(infoBanners, 'aboutSideBanner')
+
     return (
         <Layout user={auth.user}>
             <Head title='About'/>
-            <BannerImage 
+            <HeroBanner 
                 imageUrl="https://mediablob.electrolux.com/media/ElectroluxMedia/Electrolux%20Laundry%20Tower%20Lifestyle%20Wide%20Crop.jpg"
                 altText="About that"
             />
             <h3 className="text-3xl">About</h3>
             <div className="flex">
-                <div className="w-2/3">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et aperiam consequuntur necessitatibus aliquam dolor laboriosam perferendis exercitationem dicta delectus a! Laboriosam sit cum culpa tenetur?</p>
+                <div className="md:w-2/3">
                     {paragraphs.map((paragraph: string, i: number) => (
-                        <AboutParagraph key={i} paragraphBody={paragraph} />
+                        paragraph === 'banner'
+                            ?
+                            <MediaQuery key={i} maxWidth={768}>
+                                <ParagraphBanner
+                                    imageUrl={aboutSideBanner.imageUrl}
+                                    altText={aboutSideBanner.altText}
+                                    text={aboutSideBanner.text}
+                                    header={aboutSideBanner.header}
+                                    backgroundColor={aboutSideBanner.backgroundColor}
+                                    cta={aboutSideBanner.cta}
+                                    location={aboutSideBanner.location}
+                                />
+                            </MediaQuery>
+                            :
+                            <AboutParagraph key={i} paragraphBody={paragraph} />
                     ))}
                 </div>
-                <SideBanner
-                    imageUrl="https://img.buzzfeed.com/buzzfeed-static/static/2024-11/14/3/asset/333bd242d09b/sub-buzz-1021-1731555737-1.jpg?downsize=900:*&output-format=auto&output-quality=auto"
-                    altText="Patrick Star"
-                    cta={cta}
-                    backgroundColor="bg-red-400"
-                    text="This is a message"
-                />
+                <MediaQuery minWidth={768}>
+                    <SideBanner
+                        imageUrl={aboutSideBanner.imageUrl}
+                        altText={aboutSideBanner.altText}
+                        text={aboutSideBanner.text}
+                        header={aboutSideBanner.header}
+                        backgroundColor={aboutSideBanner.backgroundColor}
+                        cta={aboutSideBanner.cta}
+                        location={aboutSideBanner.location}
+                    />
+                </MediaQuery>
             </div>
         </Layout>
     )

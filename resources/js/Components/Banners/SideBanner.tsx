@@ -1,12 +1,12 @@
-import { BannerProps } from "@/types"
+import { InfoBanner } from "@/types"
 import { Link } from "@inertiajs/react"
 
-export default function SideBanner({imageUrl, altText, backgroundColor, cta, text}: BannerProps) {
-    const bannerCardDivClasses = `w-1/3 ${backgroundColor ? backgroundColor : 'bg-black'}`
+export default function SideBanner({imageUrl, altText, backgroundColor, cta, text, header}: InfoBanner) {
     return (
         <div className={`w-1/3 ${backgroundColor ? backgroundColor : 'bg-black'}`}>
             <img className="w-full" src={imageUrl} alt={altText} />
             <div className="px-6 py-3">
+                <h2 className="text-white">{header}</h2>
                 <p className="text-white text-lg">{text}</p>
                 {cta && (
                     <Link href={cta.ctaUrl}>

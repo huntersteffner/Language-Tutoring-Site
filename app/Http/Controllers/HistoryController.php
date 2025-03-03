@@ -16,11 +16,7 @@ class HistoryController extends Controller
             ->latest()
             ->paginate();
 
-        // $bookedSessions = BookedSession::all();
-        // dd($bookedSessions);
-
         $userId = auth()->user()->id;
-        // dd($userId);
 
         return Inertia::render('History', [
         'bookedSessions' => BookedSessionResource::collection($bookedSessions),

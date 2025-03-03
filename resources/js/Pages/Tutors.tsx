@@ -1,4 +1,4 @@
-import BannerImage from "@/Components/BannerImage"
+import HeroBanner from "@/Components/Banners/HeroBanner"
 import SuccessMessage from "@/Components/SuccessMessage"
 import TutorCard from "@/Components/TutorCard"
 import Layout from "@/Layouts/Layout"
@@ -10,7 +10,7 @@ export default function Tutors({auth, tutors, message}: PageProps<{message: stri
     return (
         <Layout user={auth.user}>
             <Head title='Tutors'/>
-            <BannerImage
+            <HeroBanner
                 imageUrl="https://mediablob.electrolux.com/media/ElectroluxMedia/Electrolux%20Laundry%20Tower%20Lifestyle%20Wide%20Crop.jpg"
                 altText="About that"
             />

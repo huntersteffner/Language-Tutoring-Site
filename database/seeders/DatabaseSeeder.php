@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\CallToAction;
 use App\Models\CreditPackage;
+use App\Models\InfoBanner;
 use App\Models\Tutor;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -149,6 +151,24 @@ class DatabaseSeeder extends Seeder
             'name' => 'Super Star',
             'price' => 200,
             'credits' => 50,
+        ]);
+
+        InfoBanner::create([
+            'image_url' => 'https://img.buzzfeed.com/buzzfeed-static/static/2024-11/14/3/asset/333bd242d09b/sub-buzz-1021-1731555737-1.jpg?downsize=900:*&output-format=auto&output-quality=auto',
+            'alt_text' => 'Testing',
+            'background_color' => 'bg-black',
+            'header' => 'Test Header',
+            'text' => 'Test words',
+            // 'cta' => 'blah',
+            'page' => 'about',
+            'location' => 'aboutSideBanner'
+        ]);
+
+        CallToAction::create([
+            'cta_url' => '/',
+            'cta_text' => 'Go to homepage',
+            'page' => 'about',
+            'location' => 'aboutSideBanner'
         ]);
     }
 }

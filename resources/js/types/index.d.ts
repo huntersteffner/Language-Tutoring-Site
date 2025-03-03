@@ -26,6 +26,7 @@ export interface BookedSession {
 export interface CTA {
     ctaText: string
     ctaUrl: string
+    location: string
 }
 
 export type TutorsProps = {
@@ -37,9 +38,18 @@ export type TutorsProps = {
 export interface BannerProps {
     imageUrl: string
     altText: string
-    text?: string
-    cta?: CTA
-    backgroundColor?: string
+}
+
+export interface InfoBanner extends BannerProps {
+    text: string
+    header: string
+    cta: CTA
+    backgroundColor: string
+    location: string
+}
+
+export interface BannerData {
+    data: InfoBanner[]
 }
 
 export type PageProps<T extends Record<string, unknown> = Record<string, unknown>> = T & {
@@ -52,4 +62,4 @@ export type PageProps<T extends Record<string, unknown> = Record<string, unknown
     bookedSessions: {
         data: BookedSession[]
     }
-};
+}

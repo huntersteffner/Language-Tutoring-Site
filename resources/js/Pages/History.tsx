@@ -1,4 +1,4 @@
-import BannerImage from "@/Components/BannerImage"
+import HeroBanner from "@/Components/Banners/HeroBanner"
 import HistoryCard from "@/Components/HistoryCard"
 import PrimaryButton from "@/Components/PrimaryButton"
 import Layout from "@/Layouts/Layout"
@@ -6,12 +6,10 @@ import { BookedSession, PageProps } from "@/types"
 import { Head, Link } from "@inertiajs/react"
 
 export default function History({auth, bookedSessions}: PageProps) {
-    console.log(bookedSessions)
-    console.log(auth)
     return (
         <Layout user={auth.user} >
             <Head title='Session History'/>
-            <BannerImage 
+            <HeroBanner 
                 imageUrl="https://mediablob.electrolux.com/media/ElectroluxMedia/Electrolux%20Laundry%20Tower%20Lifestyle%20Wide%20Crop.jpg"
                 altText="About that"
             />

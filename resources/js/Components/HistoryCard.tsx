@@ -3,8 +3,6 @@ import { useForm } from "@inertiajs/react"
 
 export default function HistoryCard({bookedSession}: {bookedSession: BookedSession}) {
 
-    console.log(bookedSession.created_at)
-
     const { post, reset } = useForm({
         tutor_id: bookedSession.tutor.id
     })

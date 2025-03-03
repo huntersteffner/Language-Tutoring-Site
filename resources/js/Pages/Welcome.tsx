@@ -1,15 +1,16 @@
-import { Link, Head } from '@inertiajs/react'
+import { Head } from '@inertiajs/react'
 import { PageProps } from '@/types'
 import { User } from '@/types'
 import Layout from '@/Layouts/Layout'
-import BannerImage from '@/Components/BannerImage'
+import HeroBanner from '@/Components/Banners/HeroBanner'
+import ParagraphBanner from '@/Components/Banners/ParagraphBanner'
 
 export default function Welcome({ auth, user }: PageProps<{user: User }>) {
 
     return (
         <>
             <Layout user={auth.user}>
-                <BannerImage 
+                <HeroBanner 
                     imageUrl="https://mediablob.electrolux.com/media/ElectroluxMedia/Electrolux%20Laundry%20Tower%20Lifestyle%20Wide%20Crop.jpg"
                     altText="About that"
                 />
@@ -24,8 +25,9 @@ export default function Welcome({ auth, user }: PageProps<{user: User }>) {
                                 </div>
                                 <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
 
+                                    <ParagraphBanner imageUrl='hi' altText='hi' />
 
-                                    <a
+                                    {/* <a
                                         href="https://laracasts.com"
                                         className="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10"
                                     >
@@ -42,7 +44,7 @@ export default function Welcome({ auth, user }: PageProps<{user: User }>) {
                                         </div>
 
                                         <svg className="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                                    </a>
+                                    </a> */}
 
                                     <a
                                         href="https://laravel-news.com"

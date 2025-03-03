@@ -1,9 +1,7 @@
 import NavbarLinksDesktop from "@/Components/Navbar/NavbarLinksDesktop"
 import NavbarLinksMobile from "@/Components/Navbar/NavbarLinksMobile"
 import NavbarLogin from "@/Components/Navbar/NavbarLogin"
-import NavLink from "@/Components/NavLink"
 import { User } from "@/types"
-import { Link } from "@inertiajs/react"
 import { useMediaQuery } from "react-responsive"
 
 export default function Navbar({user}: {user: User}) {
@@ -18,7 +16,7 @@ export default function Navbar({user}: {user: User}) {
     const isMobile: boolean = useMediaQuery({query: '(min-width: 720px)'})
     return (
         <header className="bg-blue-800 text-white py-1 z-30">
-            <nav className="flex justify-between max-w-7xl items-center min-h-[4rem] gap-6 mx-auto bg-blue-800 z-30">
+            <nav className="flex justify-between max-w-7xl items-center min-h-[4rem] gap-6 mx-auto z-30">
                 
                 {isMobile ?    
                     <>
