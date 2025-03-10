@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\CallToAction;
 use App\Models\CreditPackage;
+use App\Models\HeroBanner;
 use App\Models\InfoBanner;
 use App\Models\Tutor;
 use App\Models\User;
@@ -153,22 +154,79 @@ class DatabaseSeeder extends Seeder
             'credits' => 50,
         ]);
 
+        HeroBanner::create([
+            'image_url' => 'https://mediablob.electrolux.com/media/ElectroluxMedia/Electrolux%20Laundry%20Tower%20Lifestyle%20Wide%20Crop.jpg',
+            'alt_text' => 'Testing',
+            'page' => 'home'
+        ]);
+        
+        HeroBanner::create([
+            'image_url' => 'https://mediablob.electrolux.com/media/ElectroluxMedia/Electrolux%20Laundry%20Tower%20Lifestyle%20Wide%20Crop.jpg',
+            'alt_text' => 'Testing',
+            'page' => 'tutors'
+        ]);
+
+        HeroBanner::create([
+            'image_url' => 'https://mediablob.electrolux.com/media/ElectroluxMedia/Electrolux%20Laundry%20Tower%20Lifestyle%20Wide%20Crop.jpg',
+            'alt_text' => 'Testing',
+            'page' => 'about'
+        ]);
+
+        HeroBanner::create([
+            'image_url' => 'https://mediablob.electrolux.com/media/ElectroluxMedia/Electrolux%20Laundry%20Tower%20Lifestyle%20Wide%20Crop.jpg',
+            'alt_text' => 'Testing',
+            'page' => 'history'
+        ]);
+
+        InfoBanner::create([
+            'image_url' => 'https://img.buzzfeed.com/buzzfeed-static/static/2024-11/14/3/asset/333bd242d09b/sub-buzz-1021-1731555737-1.jpg?downsize=900:*&output-format=auto&output-quality=auto',
+            'alt_text' => 'Testing',
+            'background_color' => 'bg-blue-50',
+            'text_white' => false,
+            'header' => 'Home header',
+            'text' => 'Home words',
+            'page' => 'home',
+            'location' => 'homeSideBanner1'
+        ]);
+
         InfoBanner::create([
             'image_url' => 'https://img.buzzfeed.com/buzzfeed-static/static/2024-11/14/3/asset/333bd242d09b/sub-buzz-1021-1731555737-1.jpg?downsize=900:*&output-format=auto&output-quality=auto',
             'alt_text' => 'Testing',
             'background_color' => 'bg-black',
+            'text_white' => true,
             'header' => 'Test Header',
             'text' => 'Test words',
-            // 'cta' => 'blah',
             'page' => 'about',
+            'location' => 'aboutSideBanner'
+        ]);
+
+        InfoBanner::create([
+            'image_url' => 'https://img.buzzfeed.com/buzzfeed-static/static/2024-11/14/3/asset/333bd242d09b/sub-buzz-1021-1731555737-1.jpg?downsize=900:*&output-format=auto&output-quality=auto',
+            'alt_text' => 'Testing',
+            'background_color' => 'bg-black',
+            'text_white' => true,
+            'header' => 'Test Header',
+            'text' => 'Test words',
+            'page' => 'tutors',
+            'location' => 'tutorsListMessage'
+        ]);
+
+        CallToAction::create([
+            'cta_url' => '/',
+            'cta_text' => 'Go to homepage',
             'location' => 'aboutSideBanner'
         ]);
 
         CallToAction::create([
             'cta_url' => '/',
             'cta_text' => 'Go to homepage',
-            'page' => 'about',
-            'location' => 'aboutSideBanner'
+            'location' => 'tutorsListMessage'
+        ]);
+
+        CallToAction::create([
+            'cta_url' => '/tutors',
+            'cta_text' => 'Go to Tutors',
+            'location' => 'homeSideBanner1'
         ]);
     }
 }

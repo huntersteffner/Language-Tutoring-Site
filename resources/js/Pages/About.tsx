@@ -2,13 +2,13 @@ import AboutParagraph from "@/Components/AboutParagraph"
 import HeroBanner from "@/Components/Banners/HeroBanner"
 import ParagraphBanner from "@/Components/Banners/ParagraphBanner"
 import SideBanner from "@/Components/Banners/SideBanner"
-import { findInfoBanner } from "@/Hooks/FindInfoBanner"
+import { findInfoBanner } from "@/Hooks/findInfoBanner"
 import Layout from "@/Layouts/Layout"
-import { BannerData, CTA, InfoBanner, PageProps } from "@/types"
+import { BannerData, InfoBanner, PageProps } from "@/types"
 import { Head } from "@inertiajs/react"
 import MediaQuery from "react-responsive"
 
-export default function About({auth, paragraphs, infoBanners}: PageProps<{paragraphs: string[], infoBanners: BannerData}>) {
+export default function About({auth, paragraphs, infoBanners, heroBanner}: PageProps<{paragraphs: string[], infoBanners: BannerData}>) {
 
     const aboutSideBanner: InfoBanner = findInfoBanner(infoBanners, 'aboutSideBanner')
 
@@ -16,8 +16,8 @@ export default function About({auth, paragraphs, infoBanners}: PageProps<{paragr
         <Layout user={auth.user}>
             <Head title='About'/>
             <HeroBanner 
-                imageUrl="https://mediablob.electrolux.com/media/ElectroluxMedia/Electrolux%20Laundry%20Tower%20Lifestyle%20Wide%20Crop.jpg"
-                altText="About that"
+                imageUrl={heroBanner.data.imageUrl}
+                altText={heroBanner.data.altText}
             />
             <h3 className="text-3xl">About</h3>
             <div className="flex">
@@ -32,6 +32,7 @@ export default function About({auth, paragraphs, infoBanners}: PageProps<{paragr
                                     text={aboutSideBanner.text}
                                     header={aboutSideBanner.header}
                                     backgroundColor={aboutSideBanner.backgroundColor}
+                                    textWhite={aboutSideBanner.textWhite}
                                     cta={aboutSideBanner.cta}
                                     location={aboutSideBanner.location}
                                 />
@@ -47,6 +48,7 @@ export default function About({auth, paragraphs, infoBanners}: PageProps<{paragr
                         text={aboutSideBanner.text}
                         header={aboutSideBanner.header}
                         backgroundColor={aboutSideBanner.backgroundColor}
+                        textWhite={aboutSideBanner.textWhite}
                         cta={aboutSideBanner.cta}
                         location={aboutSideBanner.location}
                     />

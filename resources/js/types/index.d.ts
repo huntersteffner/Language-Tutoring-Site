@@ -45,6 +45,7 @@ export interface InfoBanner extends BannerProps {
     header: string
     cta: CTA
     backgroundColor: string
+    textWhite: boolean
     location: string
 }
 
@@ -61,5 +62,11 @@ export type PageProps<T extends Record<string, unknown> = Record<string, unknown
     }
     bookedSessions: {
         data: BookedSession[]
+    }
+    heroBanner: {
+        data: BannerProps
+    }
+    infoBanners: {
+        data: InfoBanner[]
     }
 }

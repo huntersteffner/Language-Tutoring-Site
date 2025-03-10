@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CallToAction extends Model
+class HeroBanner extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'id' => 9999,
-        'cta_url',
-        'cta_text',
-        'location'
+        'image_url',
+        'alt_text',
+        'page',
     ];
 }

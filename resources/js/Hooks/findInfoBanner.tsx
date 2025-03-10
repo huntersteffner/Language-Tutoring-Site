@@ -8,6 +8,7 @@ export function findInfoBanner(infoBanners: BannerData, location: string) {
         imageUrl: 'https://mediablob.electrolux.com/media/Frigidaire_Media/Images/Induction%20range%20HP%20Banner%20desktop.png',
         altText: 'No data found',
         backgroundColor: 'bg-black',
+        textWhite: true,
         cta: {
            ctaText: 'Home',
            ctaUrl: '/',
@@ -15,10 +16,12 @@ export function findInfoBanner(infoBanners: BannerData, location: string) {
         }
     }
 
-    infoBanners.data.forEach((banner) => {
-        if(banner.location === location) {
-            infoBanner = banner
-        }
-    })
+    if (infoBanners) {
+        infoBanners.data.forEach((banner) => {
+            if(banner.location === location) {
+                infoBanner = banner
+            }
+        })
+    }
     return infoBanner
 }

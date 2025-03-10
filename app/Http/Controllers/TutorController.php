@@ -2,27 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\HeroBannerResource;
+use App\Http\Resources\InfoBannerResource;
 use App\Http\Resources\TutorResource;
 use App\Models\BookedSession;
+use App\Models\HeroBanner;
+use App\Models\InfoBanner;
 use App\Models\Tutor;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class TutorController extends Controller
 {
 
-    // public ?Tutor $tutors = null;
-
     public function __construct()
     {
-        // $this->tutors = Tutor::all();
+
     }
 
     public function index() {
+        $heroBanner = HeroBanner::where('page', 'tutors')->firstOrFail();
+        $infoBanners = InfoBanner::where('page', 'tutors')->get();
         $tutors = Tutor::all();
+
+
         return inertia('Tutors', [
             'tutors' => TutorResource::collection($tutors),
+            'heroBanner' => new HeroBannerResource($heroBanner),
+            'infoBanners' => InfoBannerResource::collection($infoBanners),
             'message' => session('message')
         ]);
     }

@@ -13,6 +13,7 @@ class InfoBanner extends Model
         'image_url',
         'alt_text',
         'background_color',
+        'text_white',
         'haeder',
         'text',
         'page',
