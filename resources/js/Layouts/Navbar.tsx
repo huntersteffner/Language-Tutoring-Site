@@ -10,7 +10,8 @@ export default function Navbar({user}: {user: User}) {
         'welcome',
         'tutors',
         'about',
-        'history'
+        'history',
+        'test account'
     ]
 
     const isMobile: boolean = useMediaQuery({query: '(min-width: 720px)'})

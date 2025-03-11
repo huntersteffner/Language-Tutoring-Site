@@ -6,11 +6,12 @@ import { User } from "@/types"
 
 export default function NavbarLinksMobile({user, pageLinks}: { user: User,pageLinks: string[]}) {
     const [isOpen, setOpen] = useState(false)
+    console.log(user)
     return (
         <>
             <div className="flex flex-col pb-4 z-30">
                 {user && (
-                    <h2 className={`${isOpen ? 'hidden' : ''} text-center absolute text-xl w-full top-[1.5rem]`}>Hello {user.name}</h2>
+                    <h2 className={`${isOpen ? 'hidden' : ''} text-center absolute text-xl w-full top-[1.5rem]`}>Hello {user.name} {user.id}</h2>
                 )}
                 <div className="pt-2 pl-3">
                     <Hamburger  toggled={isOpen} toggle={setOpen} duration={0.3} label='Open Menu' rounded/>
@@ -22,7 +23,14 @@ export default function NavbarLinksMobile({user, pageLinks}: { user: User,pageLi
                     <div className="flex flex-col items-center w-full border border-white rounded mt-3 p-3">
                         {pageLinks.map((pageLink: string, i: number) => (
                             <>  
-                                <NavLink className="pt-3 pb-1" key={i} href={route(pageLink)} active={route().current(pageLink)}>{pageLink.charAt(0).toUpperCase() + pageLink.slice(1)}</NavLink>
+                                <NavLink className="pt-3 pb-1" key={i} href={route(pageLink)} active={route().current(pageLink)}>
+                                    {
+                                        pageLink
+                                            .split(' ')
+                                            .map((p) => p.charAt(0).toUpperCase() + p.slice(1))
+                                            .join(' ')
+                                    }
+                                </NavLink>
                             </>
                         ))}
                     </div>

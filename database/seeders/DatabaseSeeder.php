@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\BookedSession;
 use App\Models\CallToAction;
 use App\Models\CreditPackage;
 use App\Models\HeroBanner;
@@ -23,6 +24,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'password' => bcrypt('welcome-test'),
         ]);
 
         // Tutor Seeders
@@ -99,7 +101,7 @@ class DatabaseSeeder extends Seeder
             'languages' => '["French"]',
         ]);
         Tutor::create([
-            'name' => 'Spanish Name',
+            'name' => 'José Castro',
             // https://unsplash.com/photos/smiling-man-standing-near-green-trees-VVEwJJRRHgk
             'image' => 'img/tutors/Spanish1.jpg',
             'credits_required' => 2,
@@ -126,6 +128,313 @@ class DatabaseSeeder extends Seeder
             'languages' => '["Japanese","French","English"]',
         ]);
 
+        BookedSession::create([
+            'tutor_id' => 10,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-04-23 17:35:54'
+        ]);
+
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 3,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 4,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 5,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 6,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 7,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 8,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 9,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 10,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 4,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 4,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 4,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 5,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 3,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 3,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 1,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 5,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 6,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 8,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 3,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 5,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 5,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 3,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 4,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 2,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 8,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
+        BookedSession::create([
+            'tutor_id' => 9,
+            'user_id' => 1,
+            'credits' => 2,
+            'created_at' => '2025-01-30 19:25:43'
+        ]);
 
         // Credit Package Seeders
         CreditPackage::create([
@@ -178,6 +487,12 @@ class DatabaseSeeder extends Seeder
             'page' => 'history'
         ]);
 
+        HeroBanner::create([
+            'image_url' => 'https://mediablob.electrolux.com/media/ElectroluxMedia/Electrolux%20Laundry%20Tower%20Lifestyle%20Wide%20Crop.jpg',
+            'alt_text' => 'Testing',
+            'page' => 'test account'
+        ]);
+
         InfoBanner::create([
             'image_url' => 'https://img.buzzfeed.com/buzzfeed-static/static/2024-11/14/3/asset/333bd242d09b/sub-buzz-1021-1731555737-1.jpg?downsize=900:*&output-format=auto&output-quality=auto',
             'alt_text' => 'Testing',
@@ -205,8 +520,8 @@ class DatabaseSeeder extends Seeder
             'alt_text' => 'Testing',
             'background_color' => 'bg-black',
             'text_white' => true,
-            'header' => 'Test Header',
-            'text' => 'Test words',
+            'header' => 'Want to use a test account?',
+            'text' => 'If you\'d like to try booking a tutor without registering, you can use a test account.',
             'page' => 'tutors',
             'location' => 'tutorsListMessage'
         ]);
@@ -218,8 +533,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         CallToAction::create([
-            'cta_url' => '/',
-            'cta_text' => 'Go to homepage',
+            'cta_url' => '/test-account',
+            'cta_text' => 'Get Test Account',
             'location' => 'tutorsListMessage'
         ]);
 

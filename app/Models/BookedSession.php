@@ -13,7 +13,8 @@ class BookedSession extends Model
         'tutor_id',
         'user_id',
         'credits',
-        'data'
+        'data',
+        'created_at'
     ];
 
     protected function casts(): array {

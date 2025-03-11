@@ -12,7 +12,7 @@ class AboutController {
         $heroBanner = HeroBanner::where('page', 'about')->firstOrFail();
         $infoBanners = InfoBanner::where('page', 'about')->get();
 
-        // dd($heroBanner);
+        // dd($infoBanners);
 
         $paragraphs = array(
             'So many people have dreams of learning a new language, but making it become a reality just seems so hard. They enthusiastically download a language learning app, begin trying to memorize extensive lists of vocabulary words, and seek to make sense of a whole new system of grammar; however, they simply struggle to move beyond understanding the basics. The reason they cannot reach their goal of speaking fluently is that their plan lacks the most important part: one-on-one guidance with someone who already knows the language.',
@@ -23,7 +23,7 @@ class AboutController {
         return Inertia('About', [
             'paragraphs' => $paragraphs,
             'infoBanners' => InfoBannerResource::collection($infoBanners),
-            'heroBanner' => new HeroBannerResource($heroBanner)
+            'heroBanner' => is_null($heroBanner) ? null : new HeroBannerResource($heroBanner),
         ]);
     }
 }

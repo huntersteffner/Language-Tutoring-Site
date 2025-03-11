@@ -13,11 +13,11 @@ export default function About({auth, paragraphs, infoBanners, heroBanner}: PageP
     const aboutSideBanner: InfoBanner = findInfoBanner(infoBanners, 'aboutSideBanner')
 
     return (
-        <Layout user={auth.user}>
+        <Layout user={auth?.user}>
             <Head title='About'/>
             <HeroBanner 
-                imageUrl={heroBanner.data.imageUrl}
-                altText={heroBanner.data.altText}
+                imageUrl={heroBanner?.data?.imageUrl}
+                altText={heroBanner?.data?.altText}
             />
             <h3 className="text-3xl">About</h3>
             <div className="flex">
@@ -27,14 +27,14 @@ export default function About({auth, paragraphs, infoBanners, heroBanner}: PageP
                             ?
                             <MediaQuery key={i} maxWidth={768}>
                                 <ParagraphBanner
-                                    imageUrl={aboutSideBanner.imageUrl}
-                                    altText={aboutSideBanner.altText}
-                                    text={aboutSideBanner.text}
-                                    header={aboutSideBanner.header}
-                                    backgroundColor={aboutSideBanner.backgroundColor}
-                                    textWhite={aboutSideBanner.textWhite}
-                                    cta={aboutSideBanner.cta}
-                                    location={aboutSideBanner.location}
+                                    imageUrl={aboutSideBanner?.imageUrl}
+                                    altText={aboutSideBanner?.altText}
+                                    text={aboutSideBanner?.text}
+                                    header={aboutSideBanner?.header}
+                                    backgroundColor={aboutSideBanner?.backgroundColor}
+                                    textWhite={aboutSideBanner?.textWhite}
+                                    cta={aboutSideBanner?.cta}
+                                    location={aboutSideBanner?.location}
                                 />
                             </MediaQuery>
                             :
@@ -42,16 +42,18 @@ export default function About({auth, paragraphs, infoBanners, heroBanner}: PageP
                     ))}
                 </div>
                 <MediaQuery minWidth={768}>
-                    <SideBanner
-                        imageUrl={aboutSideBanner.imageUrl}
-                        altText={aboutSideBanner.altText}
-                        text={aboutSideBanner.text}
-                        header={aboutSideBanner.header}
-                        backgroundColor={aboutSideBanner.backgroundColor}
-                        textWhite={aboutSideBanner.textWhite}
-                        cta={aboutSideBanner.cta}
-                        location={aboutSideBanner.location}
-                    />
+                    <div className="w-1/3">
+                        <SideBanner
+                            imageUrl={aboutSideBanner?.imageUrl}
+                            altText={aboutSideBanner?.altText}
+                            text={aboutSideBanner?.text}
+                            header={aboutSideBanner?.header}
+                            backgroundColor={aboutSideBanner?.backgroundColor}
+                            textWhite={aboutSideBanner?.textWhite}
+                            cta={aboutSideBanner?.cta}
+                            location={aboutSideBanner?.location}
+                        />
+                    </div>
                 </MediaQuery>
             </div>
         </Layout>

@@ -25,9 +25,9 @@ class TutorController extends Controller
         $tutors = Tutor::all();
 
 
-        return inertia('Tutors', [
+        return Inertia('Tutors', [
             'tutors' => TutorResource::collection($tutors),
-            'heroBanner' => new HeroBannerResource($heroBanner),
+            'heroBanner' => is_null($heroBanner) ? null : new HeroBannerResource($heroBanner),
             'infoBanners' => InfoBannerResource::collection($infoBanners),
             'message' => session('message')
         ]);

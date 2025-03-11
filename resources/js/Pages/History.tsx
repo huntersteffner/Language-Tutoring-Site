@@ -6,8 +6,11 @@ import { BookedSession, PageProps } from "@/types"
 import { Head, Link } from "@inertiajs/react"
 
 export default function History({auth, bookedSessions}: PageProps) {
+    console.log(bookedSessions)
+    const hasPagination = bookedSessions?.meta?.total > 15
+    console.log(hasPagination)
     return (
-        <Layout user={auth.user} >
+        <Layout user={auth?.user} >
             <Head title='Session History'/>
             <HeroBanner 
                 imageUrl="https://mediablob.electrolux.com/media/ElectroluxMedia/Electrolux%20Laundry%20Tower%20Lifestyle%20Wide%20Crop.jpg"
@@ -15,7 +18,7 @@ export default function History({auth, bookedSessions}: PageProps) {
             />
             <div className="w-full max-w-2xl mx-auto min-h-[35rem]">
                 {bookedSessions.data.length > 0 ? (
-                    <h2 className="text-3xl">{auth.user.name}'s Tutoring Session History</h2>
+                    <h2 className="text-3xl">{auth?.user?.name}'s Tutoring Session History</h2>
                 ) : (
                     <>  
                         <h2 className="text-3xl">You haven't booked any tutoring sessions yet.</h2>
@@ -24,9 +27,51 @@ export default function History({auth, bookedSessions}: PageProps) {
                 )}
                 <div>
                     {bookedSessions.data.map((bookedSession: BookedSession) => (
-                        <HistoryCard key={bookedSession.id} bookedSession={bookedSession} />
+                        <HistoryCard key={bookedSession?.id} bookedSession={bookedSession} />
                     ))}
                 </div>
+                {
+                    hasPagination && (
+                        <div className="flex justify-between">
+                            <div>
+                                {
+                                    bookedSessions?.meta?.current_page > 1 && (
+                                        <>                                    
+                                            <Link href={bookedSessions.links.first}>
+                                                <button className="bg-blue-500">
+                                                    First
+                                                </button>
+                                            </Link>
+                                            <Link href={bookedSessions.links.prev}>
+                                                <button className="bg-red-500">
+                                                    Prev
+                                                </button>
+                                            </Link>
+                                        </>
+                                    )
+                                }
+                            </div>
+                            <div>
+                                {
+                                    bookedSessions?.meta?.current_page < bookedSessions?.meta?.last_page && (
+                                        <>
+                                            <Link href={bookedSessions.links.next}>                            
+                                                <button className="bg-yellow-500">
+                                                    Next
+                                                </button>
+                                            </Link>
+                                            <Link href={bookedSessions.links.last}>                            
+                                                <button className="bg-green-500">
+                                                    Last
+                                                </button>
+                                            </Link>
+                                        </>
+                                    )
+                                }
+                            </div>
+                        </div>
+                    )
+                }
             </div>
         </Layout>
     )

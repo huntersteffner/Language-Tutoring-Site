@@ -7,6 +7,7 @@ import { findInfoBanner } from "@/Hooks/findInfoBanner"
 import Layout from "@/Layouts/Layout"
 import { InfoBanner, PageProps, Tutor } from "@/types"
 import { Head } from "@inertiajs/react"
+import MediaQuery from "react-responsive"
 
 export default function Tutors({auth, tutors, message, infoBanners, heroBanner}: PageProps<{message: string}>) {
     console.log(infoBanners)
@@ -16,32 +17,48 @@ export default function Tutors({auth, tutors, message, infoBanners, heroBanner}:
         <Layout user={auth.user}>
             <Head title='Tutors'/>
             <HeroBanner
-                imageUrl={heroBanner.data.imageUrl}
-                altText={heroBanner.data.altText}
+                imageUrl={heroBanner?.data?.imageUrl}
+                altText={heroBanner?.data?.altText}
             />
-            <div className="w-full max-w-2xl mx-auto">
+            <div  className="w-full mx-auto grid-cols-2">
                 {message !== null && 
                     <SuccessMessage message={message} />
                 }
                 <h2 className="text-3xl">List of Tutors</h2>
-                <div>
+                <div className="md:grid grid-cols-2 gap-5">
                     {tutors.data.map((tutor: Tutor, index: number) => (
                         index !== 2
                         ?
-                        <TutorCard key={tutor.id} user={auth.user} tutor={tutor} />
+                        <TutorCard key={tutor?.id} user={auth?.user} tutor={tutor} />
                         :
-                        <div key={tutor.id}>       
-                            <ParagraphBanner 
-                                imageUrl={tutorsListMessage.imageUrl}
-                                altText={tutorsListMessage.altText}
-                                text={tutorsListMessage.text}
-                                header={tutorsListMessage.header}
-                                cta={tutorsListMessage.cta}
-                                location={tutorsListMessage.location}
-                                backgroundColor={tutorsListMessage.backgroundColor}
-                                textWhite={tutorsListMessage.textWhite}
-                            />
-                            <TutorCard user={auth.user} tutor={tutor} />
+                        <div className="md:flex justify-end" style={{gridColumn: '1 / span 2'}} key={tutor?.id}>
+                            <MediaQuery maxWidth={768}>
+                                <ParagraphBanner 
+                                    imageUrl={tutorsListMessage?.imageUrl}
+                                    altText={tutorsListMessage?.altText}
+                                    text={tutorsListMessage?.text}
+                                    header={tutorsListMessage?.header}
+                                    cta={tutorsListMessage?.cta}
+                                    location={tutorsListMessage?.location}
+                                    backgroundColor={tutorsListMessage?.backgroundColor}
+                                    textWhite={tutorsListMessage?.textWhite}
+                                />
+                            </MediaQuery>
+                            <MediaQuery minWidth={768}>
+                                <div className="flex justify-center w-[28rem] mx-auto my-4">
+                                    <SideBanner 
+                                        imageUrl={tutorsListMessage?.imageUrl}
+                                        altText={tutorsListMessage?.altText}
+                                        text={tutorsListMessage?.text}
+                                        header={tutorsListMessage?.header}
+                                        cta={tutorsListMessage?.cta}
+                                        location={tutorsListMessage?.location}
+                                        backgroundColor={tutorsListMessage?.backgroundColor}
+                                        textWhite={tutorsListMessage?.textWhite}
+                                    />
+                                </div>
+                            </MediaQuery>
+                            <TutorCard user={auth?.user} tutor={tutor} siblingIsBanner={true}/>
                         </div>
                     ))}
                 </div>

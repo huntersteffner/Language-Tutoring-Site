@@ -23,6 +23,23 @@ export interface BookedSession {
     tutor: Tutor
 }
 
+export interface BookedSessionLinks {
+    active?: boolean
+    label?: string
+    url?: string
+}
+
+export interface BookedSessionMeta {
+    current_page: number
+    from: number
+    last_page: number
+    links: BookedSessionLinks[]
+    path: string
+    per_page: number
+    to: number
+    total: number
+}
+
 export interface CTA {
     ctaText: string
     ctaUrl: string
@@ -62,6 +79,13 @@ export type PageProps<T extends Record<string, unknown> = Record<string, unknown
     }
     bookedSessions: {
         data: BookedSession[]
+        links: {
+            first: string
+            last: string
+            next: string
+            prev: string
+        }
+        meta: BookedSessionMeta
     }
     heroBanner: {
         data: BannerProps

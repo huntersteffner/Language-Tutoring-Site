@@ -28,14 +28,14 @@ export default function Welcome({ auth, heroBanner, infoBanners }: PageProps<{us
                                 <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
 
                                     <ParagraphBanner
-                                        imageUrl={homeSideBanner1.imageUrl}
-                                        altText={homeSideBanner1.imageUrl}
-                                        text={homeSideBanner1.text}
-                                        header={homeSideBanner1.header}
-                                        cta={homeSideBanner1.cta}
-                                        location={homeSideBanner1.location}
-                                        backgroundColor={homeSideBanner1.backgroundColor}
-                                        textWhite={homeSideBanner1.textWhite}
+                                        imageUrl={homeSideBanner1?.imageUrl}
+                                        altText={homeSideBanner1?.imageUrl}
+                                        text={homeSideBanner1?.text}
+                                        header={homeSideBanner1?.header}
+                                        cta={homeSideBanner1?.cta}
+                                        location={homeSideBanner1?.location}
+                                        backgroundColor={homeSideBanner1?.backgroundColor}
+                                        textWhite={homeSideBanner1?.textWhite}
                                     />
                                     <a
                                         href="https://laravel-news.com"

@@ -18,6 +18,8 @@ class HistoryController extends Controller
 
         $userId = auth()->user()->id;
 
+        // dd($bookedSessions);
+
         return Inertia::render('History', [
         'bookedSessions' => BookedSessionResource::collection($bookedSessions),
         ]);

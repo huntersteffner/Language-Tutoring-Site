@@ -5,6 +5,7 @@ use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TutorController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TestAccountController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -21,6 +22,8 @@ Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/tutors', [TutorController::class, 'index'])->name('tutors');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+
+Route::get('/test-account', [TestAccountController::class, 'index'])->name('test account');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

@@ -23,7 +23,7 @@ export default function HistoryCard({bookedSession}: {bookedSession: BookedSessi
         <div className="my-2 px-4 py-3 border rounded-xl shadow-lg">
             <div className="">
                 <img className="h-[10rem] w-[10rem] rounded-full overflow-hidden object-cover" src={bookedSession.tutor.image} alt={bookedSession.tutor.name} />
-                <p>You booked a session with {bookedSession.tutor.name} on {bookedSession.created_at} for {bookedSession.credits} credit{bookedSession.credits > 1 ? 's' : ''}.</p>
+                <p>{bookedSession.id} You booked a session with {bookedSession.tutor.name} on {bookedSession.created_at} for {bookedSession.credits} credit{bookedSession.credits > 1 ? 's' : ''}.</p>
                 <form onSubmit={submit}>
                     <button className="focus:outline-none text-white bg-green-800 hover:bg-green-900 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 me-2 mb-2">
                         Book Again!

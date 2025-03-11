@@ -21,7 +21,7 @@ class HomeController extends Controller {
         // dd($heroBanner);
 
         return inertia('Welcome', [
-            'heroBanner' => new HeroBannerResource($heroBanner),
+            'heroBanner' => is_null($heroBanner) ? null : new HeroBannerResource($heroBanner),
             'infoBanners' => InfoBannerResource::collection($infoBanners)
             // 'canLogin' => Route::has('login'),
             // 'canRegister' => Route::has('register')
