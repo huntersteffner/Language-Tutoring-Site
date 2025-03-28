@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\HeroBannerResource;
 use App\Http\Resources\InfoBannerResource;
+use App\Http\Resources\TutorResource;
 use App\Models\HeroBanner;
 use App\Models\InfoBanner;
+use App\Models\Tutor;
 
 class HomeController extends Controller {
 
@@ -17,12 +19,14 @@ class HomeController extends Controller {
     public function index() {
         $heroBanner = HeroBanner::where('page', 'home')->firstOrFail();
         $infoBanners = InfoBanner::where('page', 'home')->get();
+        $tutors = Tutor::where('id', '<=', 3)->get();
 
-        // dd($heroBanner);
+        // dd($tutors);
 
         return inertia('Welcome', [
             'heroBanner' => is_null($heroBanner) ? null : new HeroBannerResource($heroBanner),
-            'infoBanners' => InfoBannerResource::collection($infoBanners)
+            'infoBanners' => InfoBannerResource::collection($infoBanners),
+            'tutors' => TutorResource::collection($tutors),
             // 'canLogin' => Route::has('login'),
             // 'canRegister' => Route::has('register')
         ]);

@@ -57,6 +57,11 @@ export interface BannerProps {
     altText: string
 }
 
+export interface TestimonialProps extends BannerProps {
+    name: string
+    message: string
+}
+
 export interface InfoBanner extends BannerProps {
     text: string
     header: string

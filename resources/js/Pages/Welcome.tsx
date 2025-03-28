@@ -1,14 +1,25 @@
 import { Head } from '@inertiajs/react'
-import { PageProps } from '@/types'
+import { PageProps, Tutor } from '@/types'
 import { User } from '@/types'
 import Layout from '@/Layouts/Layout'
 import HeroBanner from '@/Components/Banners/HeroBanner'
 import ParagraphBanner from '@/Components/Banners/ParagraphBanner'
 import { findInfoBanner } from '@/Hooks/findInfoBanner'
+import Testimonial from '@/Components/Testimonial'
+import TutorCard from '@/Components/TutorCard'
+import SideBanner from '@/Components/Banners/SideBanner'
+import { getIsMobile } from '@/Hooks/getIsMobile'
 
-export default function Welcome({ auth, heroBanner, infoBanners }: PageProps<{user: User }>) {
+export default function Welcome({ auth, heroBanner, infoBanners, tutors }: PageProps<{user: User }>) {
+
+    console.log(infoBanners)
 
     const homeSideBanner1 = findInfoBanner(infoBanners, 'homeSideBanner1')
+    const homeSideBanner2 = findInfoBanner(infoBanners, auth?.user ? 'homeSideBanner2Alt' : 'homeSideBanner2')
+    const homeSideBanner3 = findInfoBanner(infoBanners, 'homeSideBanner3')
+
+    const isMobile: boolean = getIsMobile()
+    console.log(isMobile)
     return (
         <>
             <Layout user={auth.user}>
@@ -17,13 +28,21 @@ export default function Welcome({ auth, heroBanner, infoBanners }: PageProps<{us
                     altText={heroBanner?.data?.altText}
                 />
                 <Head title="Home" />
-                <div className="bg-gray-50 text-black/50">
+                <div className="bg-gray-50 text-black">
                     <div className="relative flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-                        <div className="relative w-full max-w-2xl px-6 lg:max-w-7xl">
+                        <div className="relative w-full max-w-2xl px-1 lg:px-6 lg:max-w-7xl">
 
-                            <main className="mt-6">
-                                <div className='text-3xl'>
-                                    <h2>Get Started Language Learning Today</h2>
+                            <main className="mt-4">
+                                <div className='text-3xl my-3 text-center'>
+                                    <h1>Get Started Language Learning Today</h1>
+                                </div>
+                                <div className='flex flex-col mb-3 lg:flex-row'>
+                                    <div className='lg:w-1/2'>
+                                        <img src="https://www17.wellsfargomedia.com/assets/images/contextual/responsive/smlpromo/wfi_ph_a_380700712-investingmoney_616x353.jpg" alt="" />
+                                    </div>
+                                    <div className='my-auto px-9 text-center py-3 md:w-1/2 md:px-7'>                                
+                                        <p className='text-xl leading-relaxed'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ea non quas maxime nesciunt enim fugiat, voluptate natus earum reprehenderit, in autem rerum ad dignissimos voluptas distinctio incidunt. Harum, quo.</p>
+                                    </div>
                                 </div>
                                 <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
 
@@ -37,26 +56,85 @@ export default function Welcome({ auth, heroBanner, infoBanners }: PageProps<{us
                                         backgroundColor={homeSideBanner1?.backgroundColor}
                                         textWhite={homeSideBanner1?.textWhite}
                                     />
-                                    <a
-                                        href="https://laravel-news.com"
-                                        className="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10"
-                                    >
-                                        <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                            <svg className="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M8.75 4.5H5.5c-.69 0-1.25.56-1.25 1.25v4.75c0 .69.56 1.25 1.25 1.25h3.25c.69 0 1.25-.56 1.25-1.25V5.75c0-.69-.56-1.25-1.25-1.25Z"/><path d="M24 10a3 3 0 0 0-3-3h-2V2.5a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2V20a3.5 3.5 0 0 0 3.5 3.5h17A3.5 3.5 0 0 0 24 20V10ZM3.5 21.5A1.5 1.5 0 0 1 2 20V3a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v17c0 .295.037.588.11.874a.5.5 0 0 1-.484.625L3.5 21.5ZM22 20a1.5 1.5 0 1 1-3 0V9.5a.5.5 0 0 1 .5-.5H21a1 1 0 0 1 1 1v10Z"/><path d="M12.751 6.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 7.3v-.5a.75.75 0 0 1 .751-.753ZM12.751 10.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 11.3v-.5a.75.75 0 0 1 .751-.753ZM4.751 14.047h10a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-10A.75.75 0 0 1 4 15.3v-.5a.75.75 0 0 1 .751-.753ZM4.75 18.047h7.5a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-7.5A.75.75 0 0 1 4 19.3v-.5a.75.75 0 0 1 .75-.753Z"/></g></svg>
+                                    <ParagraphBanner
+                                        imageUrl={homeSideBanner2?.imageUrl}
+                                        altText={homeSideBanner2?.imageUrl}
+                                        text={homeSideBanner2?.text}
+                                        header={homeSideBanner2?.header}
+                                        cta={homeSideBanner2?.cta}
+                                        location={homeSideBanner2?.location}
+                                        backgroundColor={homeSideBanner2?.backgroundColor}
+                                        textWhite={homeSideBanner2?.textWhite}
+                                    />
+
+
+                                </div>
+                                <div>
+                                    <h2>Featured Tutors</h2>
+                                    <div className='grid gap-6 lg:grid-cols-2 lg:gap-8'>
+                                        <div>
                                         </div>
+                                        {tutors.data.map((tutor: Tutor, index: number) => (
+                                            index > 0
+                                            ?
+                                            <div
+                                                key={tutor.id}
+                                                style={{gridColumn: isMobile ? '1 / span 2' : ''}}
+                                            >
+                                                <TutorCard
+                                                    user={auth.user}
+                                                    tutor={tutor}
+                                                />
+                                            </div>
+                                            :
+                                            <div
+                                                style={{gridColumn: '1 / span 2'}}
+                                                className='grid gap-6 lg:grid-cols-2 lg:gap-8'
+                                                key={tutor.id}
+                                            >
+                                                <TutorCard
+                                                    user={auth.user}
+                                                    tutor={tutor}
+                                                />
+                                                <div className='my-auto'>
+                                                    <SideBanner 
+                                                        imageUrl={homeSideBanner3?.imageUrl}
+                                                        altText={homeSideBanner3?.imageUrl}
+                                                        text={homeSideBanner3?.text}
+                                                        header={homeSideBanner3?.header}
+                                                        cta={homeSideBanner3?.cta}
+                                                        location={homeSideBanner3?.location}
+                                                        backgroundColor={homeSideBanner3?.backgroundColor}
+                                                        textWhite={homeSideBanner3?.textWhite}  
+                                                    />
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    {/* <TutorCard 
+                                        user={auth.user}
 
-                                        <div className="pt-3 sm:pt-5">
-                                            <h2 className="text-xl font-semibold text-black">Laravel News</h2>
-
-                                            <p className="mt-4 text-sm/relaxed">
-                                                Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                            </p>
-                                        </div>
-
-                                        <svg className="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                                    </a>
-
-
+                                    /> */}
+                                </div>
+                                <div className='flex flex-col items-center mx-3 py-10 md:flex-row'>
+                                    <Testimonial 
+                                        imageUrl='img/tutors/Spanish1.jpg'
+                                        altText='dude'
+                                        name='Bob'
+                                        message='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus obcaecati, aut delectus earum aliquid autem sint blanditiis odio sit praesentium hic deserunt soluta accusantium culpa?'
+                                    />
+                                    <Testimonial 
+                                        imageUrl='img/tutors/Spanish1.jpg'
+                                        altText='dude'
+                                        name='Bob'
+                                        message='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus obcaecati, aut delectus earum aliquid autem sint blanditiis odio sit praesentium hic deserunt soluta accusantium culpa?'
+                                    />
+                                    <Testimonial 
+                                        imageUrl='img/tutors/Spanish1.jpg'
+                                        altText='dude'
+                                        name='Bob'
+                                        message='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus obcaecati, aut delectus earum aliquid autem sint blanditiis odio sit praesentium hic deserunt soluta accusantium culpa?'
+                                    />
                                 </div>
                             </main>
 

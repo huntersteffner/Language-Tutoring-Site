@@ -498,10 +498,43 @@ class DatabaseSeeder extends Seeder
             'alt_text' => 'Testing',
             'background_color' => 'bg-blue-50',
             'text_white' => false,
-            'header' => 'Home header',
-            'text' => 'Home words',
+            'header' => 'Come see our list of tutors',
+            'text' => 'Our tutors are all certified to provide virtual language tutoring to prospective students.',
             'page' => 'home',
             'location' => 'homeSideBanner1'
+        ]);
+
+        InfoBanner::create([
+            'image_url' => 'https://www17.wellsfargomedia.com/assets/images/contextual/responsive/smlpromo/wfi_ph_a_380700712-investingmoney_616x353.jpg',
+            'alt_text' => 'Testing',
+            'background_color' => 'bg-blue-50',
+            'text_white' => false,
+            'header' => 'Test Account',
+            'text' => 'Want to test this site\'s features without registering?',
+            'page' => 'home',
+            'location' => 'homeSideBanner2'
+        ]);
+
+        InfoBanner::create([
+            'image_url' => 'https://www17.wellsfargomedia.com/assets/images/contextual/responsive/smlpromo/wfi_ph_a_380700712-investingmoney_616x353.jpg',
+            'alt_text' => 'Testing',
+            'background_color' => 'bg-blue-50',
+            'text_white' => false,
+            'header' => 'See History',
+            'text' => 'Check out your tutoring session history.',
+            'page' => 'home',
+            'location' => 'homeSideBanner2Alt'
+        ]);
+        
+        InfoBanner::create([
+            'image_url' => 'https://www17.wellsfargomedia.com/assets/images/contextual/responsive/smlpromo/wfi_ph_a_380700712-investingmoney_616x353.jpg',
+            'alt_text' => 'Testing',
+            'background_color' => 'bg-blue-50',
+            'text_white' => false,
+            'header' => 'See our full list of tutors!',
+            'text' => 'With ten different languages to choose from, you\'re sure to find the right tutor by looking at our entire staff.',
+            'page' => 'home',
+            'location' => 'homeSideBanner3'
         ]);
 
         InfoBanner::create([
@@ -520,7 +553,7 @@ class DatabaseSeeder extends Seeder
             'alt_text' => 'Testing',
             'background_color' => 'bg-black',
             'text_white' => true,
-            'header' => 'Want to use a test account?',
+            'header' => 'Need a test account?',
             'text' => 'If you\'d like to try booking a tutor without registering, you can use a test account.',
             'page' => 'tutors',
             'location' => 'tutorsListMessage'
@@ -540,8 +573,26 @@ class DatabaseSeeder extends Seeder
 
         CallToAction::create([
             'cta_url' => '/tutors',
-            'cta_text' => 'Go to Tutors',
+            'cta_text' => 'Check out Tutors',
             'location' => 'homeSideBanner1'
+        ]);
+
+        CallToAction::create([
+            'cta_url' => '/test-account',
+            'cta_text' => 'Get Test Account',
+            'location' => 'homeSideBanner2'
+        ]);
+
+        CallToAction::create([
+            'cta_url' => '/history',
+            'cta_text' => 'See History',
+            'location' => 'homeSideBanner2Alt'
+        ]);
+
+        CallToAction::create([
+            'cta_url' => '/tutors',
+            'cta_text' => 'See All',
+            'location' => 'homeSideBanner3'
         ]);
     }
 }
