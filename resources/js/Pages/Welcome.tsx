@@ -1,5 +1,5 @@
 import { Head } from '@inertiajs/react'
-import { PageProps, Tutor } from '@/types'
+import { PageProps, Testimony, Tutor } from '@/types'
 import { User } from '@/types'
 import Layout from '@/Layouts/Layout'
 import HeroBanner from '@/Components/Banners/HeroBanner'
@@ -10,7 +10,9 @@ import TutorCard from '@/Components/TutorCard'
 import SideBanner from '@/Components/Banners/SideBanner'
 import { getIsMobile } from '@/Hooks/getIsMobile'
 
-export default function Welcome({ auth, heroBanner, infoBanners, tutors }: PageProps<{user: User }>) {
+export default function Welcome({ auth, heroBanner, infoBanners, tutors, testimonies }: PageProps<{ testimonies: {data: Testimony[]} }>) {
+
+    console.log(testimonies)
 
     console.log(infoBanners)
 
@@ -70,12 +72,12 @@ export default function Welcome({ auth, heroBanner, infoBanners, tutors }: PageP
 
                                 </div>
                                 <div>
-                                    <h2>Featured Tutors</h2>
+                                    <h2 className='text-3xl text-center mt-2'>Featured Tutors</h2>
                                     <div className='grid gap-6 lg:grid-cols-2 lg:gap-8'>
                                         <div>
                                         </div>
                                         {tutors.data.map((tutor: Tutor, index: number) => (
-                                            index > 0
+                                            index > 0 || isMobile
                                             ?
                                             <div
                                                 key={tutor.id}
@@ -110,31 +112,52 @@ export default function Welcome({ auth, heroBanner, infoBanners, tutors }: PageP
                                                 </div>
                                             </div>
                                         ))}
+                                        {isMobile && (
+                                            <div style={{gridColumn: '1 / span 2'}}>
+                                                <SideBanner 
+                                                    imageUrl={homeSideBanner3?.imageUrl}
+                                                    altText={homeSideBanner3?.imageUrl}
+                                                    text={homeSideBanner3?.text}
+                                                    header={homeSideBanner3?.header}
+                                                    cta={homeSideBanner3?.cta}
+                                                    location={homeSideBanner3?.location}
+                                                    backgroundColor={homeSideBanner3?.backgroundColor}
+                                                    textWhite={homeSideBanner3?.textWhite}  
+                                                /> 
+                                            </div>
+                                        )}
                                     </div>
-                                    {/* <TutorCard 
-                                        user={auth.user}
-
-                                    /> */}
                                 </div>
-                                <div className='flex flex-col items-center mx-3 py-10 md:flex-row'>
-                                    <Testimonial 
-                                        imageUrl='img/tutors/Spanish1.jpg'
-                                        altText='dude'
-                                        name='Bob'
-                                        message='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus obcaecati, aut delectus earum aliquid autem sint blanditiis odio sit praesentium hic deserunt soluta accusantium culpa?'
-                                    />
-                                    <Testimonial 
-                                        imageUrl='img/tutors/Spanish1.jpg'
-                                        altText='dude'
-                                        name='Bob'
-                                        message='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus obcaecati, aut delectus earum aliquid autem sint blanditiis odio sit praesentium hic deserunt soluta accusantium culpa?'
-                                    />
-                                    <Testimonial 
-                                        imageUrl='img/tutors/Spanish1.jpg'
-                                        altText='dude'
-                                        name='Bob'
-                                        message='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus obcaecati, aut delectus earum aliquid autem sint blanditiis odio sit praesentium hic deserunt soluta accusantium culpa?'
-                                    />
+                                <div>
+                                    <h2 className='text-3xl text-center'>What others are saying</h2>
+                                    <div className='flex flex-col items-center mx-3 py-10 md:flex-row'>
+                                        {testimonies.data.map((testimony) => (
+                                            <Testimonial
+                                                imageUrl={testimony.imageUrl}
+                                                altText={testimony.altText}
+                                                name={testimony.name}
+                                                message={testimony.message}
+                                            />
+                                        ))}
+                                        {/* <Testimonial 
+                                            imageUrl='img/tutors/Spanish1.jpg'
+                                            altText='dude'
+                                            name='Bob'
+                                            message='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus obcaecati, aut delectus earum aliquid autem sint blanditiis odio sit praesentium hic deserunt soluta accusantium culpa?'
+                                        />
+                                        <Testimonial 
+                                            imageUrl='img/tutors/Spanish1.jpg'
+                                            altText='dude'
+                                            name='Bob'
+                                            message='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus obcaecati, aut delectus earum aliquid autem sint blanditiis odio sit praesentium hic deserunt soluta accusantium culpa?'
+                                        />
+                                        <Testimonial 
+                                            imageUrl='img/tutors/Spanish1.jpg'
+                                            altText='dude'
+                                            name='Bob'
+                                            message='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus obcaecati, aut delectus earum aliquid autem sint blanditiis odio sit praesentium hic deserunt soluta accusantium culpa?'
+                                        /> */}
+                                    </div>
                                 </div>
                             </main>
 

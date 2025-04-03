@@ -18,14 +18,14 @@ export default function History({auth, bookedSessions}: PageProps) {
             />
             <div className="w-full max-w-2xl mx-auto min-h-[35rem]">
                 {bookedSessions.data.length > 0 ? (
-                    <h2 className="text-3xl">{auth?.user?.name}'s Tutoring Session History</h2>
+                    <h1 className="text-center text-3xl">{auth?.user?.name}'s Tutoring Session History</h1>
                 ) : (
                     <>  
                         <h2 className="text-3xl">You haven't booked any tutoring sessions yet.</h2>
                         <p>Check out our list of tutors so that you can book your first session <Link href={route('tutors')}><PrimaryButton>View Tutors Page</PrimaryButton></Link></p>
                     </>
                 )}
-                <div>
+                <div className="mx-3">
                     {bookedSessions.data.map((bookedSession: BookedSession) => (
                         <HistoryCard key={bookedSession?.id} bookedSession={bookedSession} />
                     ))}

@@ -7,8 +7,6 @@ export default function HistoryCard({bookedSession}: {bookedSession: BookedSessi
         tutor_id: bookedSession.tutor.id
     })
 
-    const formattedCreatedDate = new Date(bookedSession.created_at).toDateString()
-
 
     const submit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -22,9 +20,9 @@ export default function HistoryCard({bookedSession}: {bookedSession: BookedSessi
     return (
         <div className="my-2 px-4 py-3 border rounded-xl shadow-lg">
             <div className="">
-                <img className="h-[10rem] w-[10rem] rounded-full overflow-hidden object-cover" src={bookedSession.tutor.image} alt={bookedSession.tutor.name} />
-                <p>{bookedSession.id} You booked a session with {bookedSession.tutor.name} on {bookedSession.created_at} for {bookedSession.credits} credit{bookedSession.credits > 1 ? 's' : ''}.</p>
-                <form onSubmit={submit}>
+                <img className="h-[10rem] w-[10rem] mx-auto rounded-full overflow-hidden object-cover" src={bookedSession.tutor.image} alt={bookedSession.tutor.name} />
+                <p className="mt-4 text-lg text-center md:px-[8rem]">You booked a session with {bookedSession.tutor.name} on {bookedSession.created_at} for {bookedSession.credits} credit{bookedSession.credits > 1 ? 's' : ''}.</p>
+                <form className="mt-3 px-10" onSubmit={submit}>
                     <button className="focus:outline-none text-white bg-green-800 hover:bg-green-900 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 me-2 mb-2">
                         Book Again!
                     </button>

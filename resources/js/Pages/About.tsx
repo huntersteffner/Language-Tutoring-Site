@@ -19,7 +19,7 @@ export default function About({auth, paragraphs, infoBanners, heroBanner}: PageP
                 imageUrl={heroBanner?.data?.imageUrl}
                 altText={heroBanner?.data?.altText}
             />
-            <h3 className="text-3xl">About</h3>
+            <h1 className="text-3xl text-center">About</h1>
             <div className="flex">
                 <div className="md:w-2/3">
                     {paragraphs.map((paragraph: string, i: number) => (

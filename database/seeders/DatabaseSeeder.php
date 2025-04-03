@@ -7,6 +7,7 @@ use App\Models\CallToAction;
 use App\Models\CreditPackage;
 use App\Models\HeroBanner;
 use App\Models\InfoBanner;
+use App\Models\Testimony;
 use App\Models\Tutor;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -529,8 +530,8 @@ class DatabaseSeeder extends Seeder
         InfoBanner::create([
             'image_url' => 'https://www17.wellsfargomedia.com/assets/images/contextual/responsive/smlpromo/wfi_ph_a_380700712-investingmoney_616x353.jpg',
             'alt_text' => 'Testing',
-            'background_color' => 'bg-blue-50',
-            'text_white' => false,
+            'background_color' => '#777',
+            'text_white' => true,
             'header' => 'See our full list of tutors!',
             'text' => 'With ten different languages to choose from, you\'re sure to find the right tutor by looking at our entire staff.',
             'page' => 'home',
@@ -551,12 +552,23 @@ class DatabaseSeeder extends Seeder
         InfoBanner::create([
             'image_url' => 'https://img.buzzfeed.com/buzzfeed-static/static/2024-11/14/3/asset/333bd242d09b/sub-buzz-1021-1731555737-1.jpg?downsize=900:*&output-format=auto&output-quality=auto',
             'alt_text' => 'Testing',
-            'background_color' => 'bg-black',
+            'background_color' => '#000',
             'text_white' => true,
             'header' => 'Need a test account?',
             'text' => 'If you\'d like to try booking a tutor without registering, you can use a test account.',
             'page' => 'tutors',
             'location' => 'tutorsListMessage'
+        ]);
+
+        InfoBanner::create([
+            'image_url' => 'https://img.buzzfeed.com/buzzfeed-static/static/2024-11/14/3/asset/333bd242d09b/sub-buzz-1021-1731555737-1.jpg?downsize=900:*&output-format=auto&output-quality=auto',
+            'alt_text' => 'Testing',
+            'background_color' => '#000',
+            'text_white' => true,
+            'header' => 'Let\'s get started',
+            'text' => 'Click below to sign in with the test account.',
+            'page' => 'test-account',
+            'location' => 'testAccountToLogin'
         ]);
 
         CallToAction::create([
@@ -594,5 +606,47 @@ class DatabaseSeeder extends Seeder
             'cta_text' => 'See All',
             'location' => 'homeSideBanner3'
         ]);
+
+        CallToAction::create([
+            'cta_url' => '/login',
+            'cta_text' => 'Login',
+            'location' => 'testAccountToLogin'
+        ]);
+
+        Testimony::create([
+            'name' => 'Bob',
+            'message' => 'Hi there',
+            'image_url' => 'img/tutors/Spanish1.jpg',
+            'alt_text' => 'Testing',
+        ]);
+        
+        Testimony::create([
+            'name' => 'Rob',
+            'message' => 'His there',
+            'image_url' => 'img/tutors/Spanish1.jpg',
+            'alt_text' => 'Testing',
+        ]);
+
+        Testimony::create([
+            'name' => 'Lob',
+            'message' => 'Hi here',
+            'image_url' => 'img/tutors/Spanish1.jpg',
+            'alt_text' => 'Testing',
+        ]);
+
+        Testimony::create([
+            'name' => 'Lob',
+            'message' => 'Hi here',
+            'image_url' => 'img/tutors/Spanish1.jpg',
+            'alt_text' => 'Testing',
+        ]);
+        
+        Testimony::create([
+            'name' => 'Lob',
+            'message' => 'Hi here',
+            'image_url' => 'img/tutors/Spanish1.jpg',
+            'alt_text' => 'Testing',
+        ]);
+
     }
 }

@@ -46,6 +46,14 @@ export interface CTA {
     location: string
 }
 
+export interface Testimony {
+    id: number
+    imageUrl: string
+    altText: string
+    name: string
+    message: string
+}
+
 export type TutorsProps = {
     tutors: {
         data: Tutor[]

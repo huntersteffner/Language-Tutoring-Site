@@ -24,7 +24,7 @@ export default function Tutors({auth, tutors, message, infoBanners, heroBanner}:
                 {message !== null && 
                     <SuccessMessage message={message} />
                 }
-                <h2 className="text-3xl">List of Tutors</h2>
+                <h1 className="text-3xl text-center">List of Tutors</h1>
                 <div className="md:grid grid-cols-2 gap-5">
                     {tutors.data.map((tutor: Tutor, index: number) => (
                         index !== 2

@@ -2,7 +2,7 @@ import { TestimonialProps } from '@/types'
 
 export default function Testimonial({imageUrl, altText, name, message}: TestimonialProps) {
     return (
-        <div className='flex my-5'>
+        <div className='flex my-5 w-[25rem]'>
             <img
                 className='h-[10rem] w-[10rem] my-auto object-cover rounded-full'
                 src={imageUrl}

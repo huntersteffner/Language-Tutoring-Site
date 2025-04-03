@@ -3,8 +3,11 @@ import { Link } from "@inertiajs/react"
 
 export default function SideBanner({imageUrl, altText, backgroundColor, textWhite, cta, text, header}: InfoBanner) {
     return (
-        <div className={`${backgroundColor ? backgroundColor : 'bg-black'} ${textWhite ? 'text-white' : 'text-black'}`}>
-            <img className="w-full" src={imageUrl} alt={altText} />
+        <div 
+            className={`${textWhite ? 'text-white' : 'text-black'} rounded`}
+            style={{backgroundColor: backgroundColor ? backgroundColor : '#000'}}
+        >
+            <img className="w-full rounded-t" src={imageUrl} alt={altText} />
             <div className="px-6 py-3">
                 <h2>{header}</h2>
                 <p className="text-lg">{text}</p>
